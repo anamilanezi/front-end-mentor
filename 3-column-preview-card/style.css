@@ -40,9 +40,10 @@ button {
     background-color: var(--very-light-gray);
     border-radius: 20px;
     font-family: 'Lexend Deca', sans-serif;
-    width: 60%;
+    width: 70%;
     height: 40px;
     margin-top: 50px;
+    font-size: 15px;    
 }
 
 img {
@@ -60,10 +61,11 @@ img {
 }
 
 .child {
-    width: 60%;
+    max-width: 1000px;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: auto 5%;
 }
 
 .card {
@@ -71,7 +73,7 @@ img {
 }
 
 .content {
-    height: 450px;
+    height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -79,7 +81,7 @@ img {
 
 .sedan {
     background-color: var(--bright-orange);
-    border-radius: 10px 0 0 10px;
+    border-radius: 5px 0 0 5px;
 }
 
 .suv {
@@ -88,7 +90,7 @@ img {
 
 .luxury {
     background-color: var(--very-dark-cyan);
-    border-radius: 0 10px 10px 0;
+    border-radius: 0 5px 5px 0;
 }
 
 .bt-sedan {
@@ -106,6 +108,7 @@ img {
 button:hover {
     color: var(--very-light-gray);
     border: 2px solid var(--very-light-gray);
+    cursor: pointer;
 }
 
 .bt-sedan:hover {
@@ -118,4 +121,71 @@ button:hover {
 
 .bt-luxury:hover {
     background-color: var(--very-dark-cyan);
+}
+
+@media screen and (max-width:950px) { 
+    p {
+        line-height: 20px;
+    }
+
+    .card {
+        padding: 25px;
+    }
+
+}
+
+
+
+@media screen and (max-width:550px) {
+
+    p {
+        max-width: 90%;
+        margin-top: 2rem;
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+    }   
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--very-light-gray);
+        width: 100%;
+        height: auto;
+    }
+
+    .child {
+        max-width: 375px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .card {
+        padding: 50px;
+    }
+
+    
+    .content {
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .sedan {
+        margin-top: 10%;
+        border-radius: 5px 5px 0 0;
+    }
+
+    .luxury {
+        margin-bottom: 10%;
+        border-radius: 0 0 5px 5px;
+    }
+
+    button {
+        border-radius: 25px;
+        width: 50%;
+        height: 50px;
+    }
 }
