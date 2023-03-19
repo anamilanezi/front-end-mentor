@@ -4,4 +4,5 @@
 
 * [QR-Code](/qr-code)
 * [Product Preview Card](/product-preview-card)
-* [3 Column Preview Card](3-column-preview-card)
+* [3 Column Preview Card](/3-column-preview-card)
+* [Stats Preview Card](/stats-preview-card)
