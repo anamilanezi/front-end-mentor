@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap');
+
+:root {
+    --very-dark-blue: hsl(233, 47%, 7%);
+    --dark-blue: hsl(244, 38%, 16%);
+    --violet: rgb(170, 92, 219);
+    --white: hsl(0, 0%, 100%);
+    --main-paragraph: hsla(0, 0%, 100%, 0.75);
+    --stat-headings: hsla(0, 0%, 100%, 0.6);
+}
+
+
+body {
+    background-color: var(--very-dark-blue);
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: var(--main-paragraph);
+}
+
+.container-fluid {
+    height: 99vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#main {
+    width: 1110px;
+    min-height: 450px;
+    background-color: var(--dark-blue);
+    border-radius: 10px;
+    margin: 22% 0;
+}
+
+.row {
+    margin: 0;
+    height: 100%;
+}
+
+#main-row {
+    width: 100%;
+    min-height: 450px;
+    flex-direction: row-reverse;
+}
+
+#info {
+    padding: 5%;
+    /* min-height: 450px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+h1 {
+    color: var(--white);
+    font-weight: 700;
+}
+
+.insights {
+    color: var(--violet);
+}
+
+p {
+    width: 85%;
+    margin-top: -8%;
+}
+
+.stats {
+    font-family: 'Lexend Deca', sans-serif;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    color: var(--stat-headings);
+    letter-spacing: 1px;
+}
+
+.stat-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--white);
+    text-transform: none;
+    margin-bottom: 3%;
+}
+
+.header-image {
+    /* background-image: linear-gradient(rgba(68, 6, 138, 0.5), rgba(68, 6, 138, 0.5)), url('../images/image-header-desktop.
+    jpg'); */
+    background-image: url('../images/image-header-desktop.jpg');
+    background-size: cover;
+    border-radius: 0 10px 10px 0;
+    box-shadow: inset 0 0 0 500px rgba(68, 6, 138, 0.5);
+}
+
+
+@media screen and (max-width:1110px) {
+    
+    #main {
+        margin-top: 50%;
+        /* margin-top: 150px !important; */
+    }
+
+
+    #info {
+        text-align: center;
+    }
+
+    .header-image {
+        min-height: 250px;
+        border-radius: 10px 10px 0 0;
+    }
+
+    p {
+        margin: 5%;
+    }
+}
+
