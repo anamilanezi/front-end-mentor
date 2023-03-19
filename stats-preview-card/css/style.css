@@ -96,7 +96,7 @@ p {
 }
 
 
-@media screen and (max-width:1110px) {
+@media screen and (max-width:1000px) {
 
     .container-fluid {
         height: auto;
@@ -116,15 +116,33 @@ p {
         text-align: center;
     }
 
-    h1 {
-        padding: 5%;
-    }
-
     p {
-        margin-bottom: 10%;
+        margin: 0;
         width: 100%;
         padding: 5%;
     }
+    
+    .stat-col {
+        margin-bottom: 5%;
+    }
+
+    .stat {
+        margin-bottom: 0;
+    }
+
+}
+
+@media screen and (max-width:500px) {
+
+    h1 {
+        padding: 5% 6% 0 6%;
+    }
+
+    p {
+        margin-bottom: 5%;
+        width: 100%;
+    }
+    
     .stat-col {
         margin-bottom: 10%;
     }
