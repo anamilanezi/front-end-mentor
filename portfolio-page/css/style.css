@@ -14,6 +14,8 @@
 
 .description {
     position: sticky;
+    top: 5%;
+    z-index: 999;
 }
 
 #gallery-col {
@@ -22,7 +24,7 @@
 
 #gallery-row {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -31,9 +33,15 @@
     min-width: 225px;
     height: 225px;
     max-height: 225px;
+
     margin-bottom: 5%;
     background-color: blue;
     border-radius: 15px;
+    ;
+}
+
+.hidden {
+    visibility: hidden;
 }
 
 @media screen and (max-width:900px) {
