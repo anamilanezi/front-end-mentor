@@ -35,10 +35,10 @@ Users should be able to:
 
 
 #### Desktop
-![](/images/desktop-result.jpg)
+![](./images/desktop-result.jpg)
 
 #### Mobile
-![](/images/mobile-result.jpg)
+![](./images/mobile-result.jpg)
 
 
 ### Links
