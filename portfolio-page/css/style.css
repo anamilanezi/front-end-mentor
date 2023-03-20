@@ -16,7 +16,6 @@
 body {
     background-color: var(--dark-red);
     font-family: var(--content-font);
-    text-align: right;
 }
 
 h1 {
@@ -26,15 +25,10 @@ h1 {
     padding-right: 5%;
 }
 
-p {
-    padding: 5% 0% 5% 15%;
-    color: var(--forest-green);
-    line-height: 2;
-    padding-right: 5%;
-}
 
 .row {
     padding: 0;
+    height: auto;
 }
 
 #page-row {
@@ -47,7 +41,7 @@ p {
 
 #title {
     background-color: var(--mostard);
-    height: auto;
+    height: 100vh;
 }
 
 .challenges {
@@ -58,6 +52,15 @@ p {
     position: sticky;
     top: 5%;
     z-index: 999;
+}
+
+.description p {
+
+    padding: 5% 0% 5% 15%;
+    color: var(--forest-green);
+    line-height: 2;
+    padding-right: 5%;
+
 }
 
 #contact-row {
@@ -71,34 +74,33 @@ p {
 
 /* Gallery  */
 
-/* #gallery-col {
-    padding: 5%;
-} */
-
-.gallery {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    padding: 5%;
-    margin: 0 auto;
-    gap: 16px;
+#gallery-col {
+    padding: 2%;
 }
 
-.gallery img {
+.preview-img {
     width: 100%;
     max-width: 500px;
     height: auto;
     object-fit: cover;
-    border-radius: 10px;
     filter: sepia(100%);
-    border: 2px dashed var(--tile-red);
-    /* opacity: 0.8;     */
 }
 
-.gallery img:hover{
+.preview-img:hover{
     filter: none;
+}
+
+.project-info {
+    font-size: 0.7rem;
+}
+
+.project-title{
+    background-color: var(--forest-green);
+    color: var(--cream);
+    text-align: center;
+    padding: 5px 0;
+    font-weight: 800;
+    
 }
 
 .hidden {
