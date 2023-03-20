@@ -6,9 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- displays site properly based on user's device -->
 
+  <!-- Font Awesome -->
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/084b2a3c9b.js" crossorigin="anonymous"></script>
+
+
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
   <link rel="stylesheet" href="css/style.css">
   <title>Frontend Mentor Challanges | Ana M Milanezi </title>
 
@@ -16,35 +22,39 @@
 
 <body>
 
-  <div class="container">
+  <div class="container-fluid">
     <div class="row" id="page-row">
 
-        <div class="col-lg-4" id="header">
+        <div class="col-lg-5" id="title">
           <div class="description">
-            <h1>FrontEnd Mentor Challanges</h1>
+            <h1>Frontend Mentor Challanges</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis provident neque blanditiis optio, repellendus vero assumenda autem iusto aliquam, temporibus, quam magni veniam. Veritatis quia nostrum recusandae praesentium, quasi eligendi?</p>
-            <div class="row" id="contact-row">
-              <div class="col">Git</div>
-              <div class="col">Mail</div>
+            
+            <div class="row text-right" id="contact-row">
+              <div class="col"><i class="fa-brands fa-github-alt icon"></i></div>
+              <div class="col"><i class="fa-solid fa-envelope icon"></i></div>
             </div>
+
           </div>
         </div>
 
 
         <div class="col" id="gallery-col">
+          <h2>newbie</h2>
+          <div class="row gallery">
+            
+            <img class="preview-img" src="images/qr-code-miniature.jpg" alt="QR-code page preview">
+            <img class="preview-img" src="images/product-miniature.jpg" alt="Product card page preview">
+            <img class="preview-img" src="images/3-column-miniature.jpg" alt="Cat looking down">
+            <img class="preview-img" src="images/stats-miniature.jpg" alt="Cat sleeping under blanket">
+            <img class="preview-img" src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/5.jpg" alt="Baby cat with blue eyes">
+            <img class="preview-img" src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/6.jpg" alt="Two baby cats">
+            <img class="preview-img" src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/7.jpg" alt="Cat hiding">
+            <img class="preview-img" src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/8.jpg" alt="Curious orange cat">
+            <img class="preview-img" src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/9.jpg" alt="Two tired baby cats">
+
+        </div>
           
-          <div class="row" id="gallery-row">
-            <h2 class=".col">newbie</h2>
-            <div class="col thumb">qr-code</div>
-            <div class="col thumb">qr-code</div>
-            <div class="col thumb">qr-code</div>
-            <div class="col thumb">qr-code</div>
-            <div class="col thumb">qr-code</div>
-            <div class="col thumb hidden">qr-code</div>
-
-
-            <!-- <div class="col-lg-4 col-md-4 thumb"></div> -->
-          </div>
         </div>
 
 
