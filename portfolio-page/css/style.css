@@ -23,13 +23,14 @@ h1 {
     color: var(--cherry-red);
     font-family: var(--title-font);
     font-size: 2.5rem;
+    padding-right: 5%;
 }
 
 p {
     padding: 5% 0% 5% 15%;
     color: var(--forest-green);
     line-height: 2;
-
+    padding-right: 5%;
 }
 
 .row {
@@ -47,7 +48,10 @@ p {
 #title {
     background-color: var(--mostard);
     height: auto;
-    padding: 5%;
+}
+
+.challenges {
+    font-size: 2.2rem;
 }
 
 .description {
@@ -57,7 +61,7 @@ p {
 }
 
 #contact-row {
-    padding: 5% 0% 5% 50%;
+    padding: 5% 5% 5% 75%;
 }
 
 .icon {
@@ -67,34 +71,33 @@ p {
 
 /* Gallery  */
 
-#gallery-col {
+/* #gallery-col {
     padding: 5%;
-}
+} */
 
-/* .gallery {
+.gallery {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     padding: 5%;
-    max-width: 1400px;
     margin: 0 auto;
     gap: 16px;
-} */
+}
 
-.preview-img {
+.gallery img {
     width: 100%;
-    max-width: 250px;
+    max-width: 500px;
     height: auto;
-    object-fit: fil;
+    object-fit: cover;
     border-radius: 10px;
     filter: sepia(100%);
     border: 2px dashed var(--tile-red);
     /* opacity: 0.8;     */
 }
 
-.preview-img:hover{
+.gallery img:hover{
     filter: none;
 }
 
@@ -102,27 +105,10 @@ p {
     visibility: hidden;
 }
 
-@media screen and (max-width:1440px) {
-    #page-row {
-        width: 90%;
+
+/* @media screen and (max-width:1200px) {
+
+    h1 {
+        font-size: 1.7rem;
     }
-}
-
-@media screen and (max-width:1290px) {
-    #page-row {
-        width: 100%;
-    }
-}
-
-
-
-@media screen and (max-width:650px) {
-    .gallery img {
-        width: 100%;
-        max-width: 450px;
-        height: 250px;
-        object-fit: cover;
-        border-radius: 10px;
-        border: 2px dashed #FFDD83;
-    }
-}
+} */
