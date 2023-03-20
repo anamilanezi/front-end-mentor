@@ -21,7 +21,7 @@ body {
 h1 {
     color: var(--cherry-red);
     font-family: var(--title-font);
-    font-size: 2.5rem;
+    font-size: 2.7rem;
     padding-right: 5%;
 }
 
@@ -34,6 +34,10 @@ h2 {
 
 hr {
     border: 2px solid var(--cream);
+}
+
+p {
+    color: var(--forest-green);
 }
 
 .row {
@@ -64,22 +68,29 @@ hr {
     z-index: 999;
 }
 
-.description p {
-
-    padding: 5% 0% 5% 15%;
-    color: var(--forest-green);
+.description-text {
+    padding: 5% 0 0 15%;
     line-height: 2;
     padding-right: 5%;
-
 }
 
+.author {
+    font-weight: 800;
+    padding: 0 5%;
+}
+
+
 #contact-row {
-    padding: 5% 5% 5% 75%;
+    padding: 2% 5% 5% 60%;
 }
 
 .icon {
     font-size: 35px;
     color: var(--dark-red);
+}
+
+.icon:hover {
+    color: var(--cream);
 }
 
 /* Gallery  */
@@ -110,8 +121,18 @@ hr {
     text-align: center;
     padding: 5px 0;
     font-weight: 800;
-    
 }
+
+.card-footer a {
+    text-transform: uppercase;
+    color: var(--cherry-red);
+}
+
+.card-footer a:hover {
+    background-color: var(--cherry-red);
+    color: var(--cream);
+}
+
 
 .hidden {
     visibility: hidden;
