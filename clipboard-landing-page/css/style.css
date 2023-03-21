@@ -84,7 +84,6 @@ p {
     box-shadow: 0px 5px 15px 0px var(--cyan-shadow);
 }
 
-
 .mac-btn:hover {
     
     background-color: var(--blue-hover);
@@ -94,15 +93,21 @@ p {
 
 /* Features */
 
-.features-title {
-    padding: 0 25% 5%;
+.title {
+    padding: 9% 25% 5%;
+    font-size: 1.3rem;
 }
+
+/* .features-title {
+    padding: 0 25% 5%;
+} */
 
 .features-list {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     padding: 5% 20% 5% 3%;
+    text-align: left;
 }
 
 .features-img {
@@ -115,18 +120,32 @@ p {
 
 /* Devices */
 
-.devices {
-    padding: 5%
+/* .devices-title {
+    padding: 9% 25% 5%;
+    font-size: 1.3rem;
+} */
+
+.devices-image {
+    background: url('../images/image-devices.png') no-repeat center; 
+    object-fit: contain;
+    min-height: 575px;
 }
 
+/* Tools */
 
+.tools-row {
+    padding: 0 10%;
+}
 
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 1000px) {
+
+    .title {
+        padding: 5%;
+    }
 
     .features-img {
         background-size: 75%;
         background-position-x: center;
-        min-height: 400px;
     }
 
     .features-list {
@@ -136,5 +155,15 @@ p {
 
     .feature-item {
         padding: 5% 0;
+    }
+
+    .devices {
+        padding: 25% 10%;
+        
+    }
+
+    .devices-image {
+        background-size: 80%;
+        min-height: 400px;
     }
 }
