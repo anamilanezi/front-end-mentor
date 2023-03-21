@@ -28,7 +28,8 @@ body {
 h1 {
     font-family: 'Big Shoulders Display', cursive;
     text-transform: uppercase;
-    font-size: 3rem
+    font-size: 3rem;
+    color: var(--very-light-gray);
 }
 
 p {
@@ -60,7 +61,7 @@ img {
     
 }
 
-.child {
+.row {
     max-width: 1000px;
     display: flex;
     justify-content: center;
@@ -146,6 +147,7 @@ button:hover {
     }   
     .container {
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         background-color: var(--very-light-gray);
