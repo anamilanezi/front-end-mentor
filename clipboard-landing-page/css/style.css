@@ -59,7 +59,7 @@ p {
 
 .btn {
     color: #fff;
-    padding: 15px 40px;
+    padding: 15px;
     letter-spacing: 1px;
     font-size: 1.1rem;
     margin: 10px;
@@ -94,7 +94,7 @@ p {
 /* Features */
 
 .title {
-    padding: 9% 25% 5%;
+    padding: 5% 25% 5%;
     font-size: 1.3rem;
 }
 
@@ -120,11 +120,6 @@ p {
 
 /* Devices */
 
-/* .devices-title {
-    padding: 9% 25% 5%;
-    font-size: 1.3rem;
-} */
-
 .devices-image {
     background: url('../images/image-devices.png') no-repeat center; 
     object-fit: contain;
@@ -135,6 +130,26 @@ p {
 
 .tools-row {
     padding: 0 10%;
+}
+
+.tool-icon {
+    width: 75px;
+}
+
+/* Press  */
+
+
+/* Call for Action */
+
+.cta .title {
+    padding-bottom: 2%;
+}
+
+
+/* Footer */
+
+.page-footer {
+    background-color: var(--gray);
 }
 
 @media screen and (max-width: 1000px) {
@@ -166,4 +181,12 @@ p {
         background-size: 80%;
         min-height: 400px;
     }
+}
+
+@media screen and (max-width: 500px) {
+    .devices-image {
+        background-size: 100%;
+        min-height: 400px;
+    }
+    
 }
