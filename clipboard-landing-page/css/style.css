@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&display=swap');
+
+:root {
+    --strong-cyan: hsl(171, 66%, 44%);
+    --cyan-hover: rgb(93, 204, 187);
+    --cyan-border: hsl(171, 66%, 37%);
+    --cyan-shadow: rgb(30, 148, 130, 0.5);
+    --light-blue: hsl(233, 100%, 69%);
+    --blue-hover: rgb(136, 150, 255);
+    --blue-border: hsl(233, 100%, 62%);
+    --dark-gray: hsl(210, 10%, 33%);
+    --gray: hsl(201, 11%, 66%)
+}
+
+body {
+    font-family: 'Bai Jamjuree', sans-serif;
+    font-size: 18px;
+    text-align: center;
+    color: var(--gray);
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+    color: var(--dark-gray);
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+p {
+    line-height: 1.5;
+}
+
+.container-fluid {
+    padding: 0;
+}
+
+.page-header {
+    background-image: url(../images/bg-header-desktop.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding: 10%;
+}
+
+.header-logo {
+    padding-bottom: 5%;
+}
+
+.header-text {
+    font-size: 1.3rem;
+    padding: 2% 18%;
+}
+
+.btn {
+    color: #fff;
+    padding: 15px 40px;
+    letter-spacing: 1px;
+    font-size: 1rem;
+    margin: 10px;
+}
+
+.ios-btn {
+    background-color: var(--strong-cyan);
+    border-bottom: 3px solid var(--cyan-border) ;
+    box-shadow: 0px 5px 15px 0px var(--cyan-shadow);
+}
+
+.ios-btn:hover {
+    background-color: var(--cyan-hover);
+    color: #fff;
+    border-bottom: 3px solid var(--cyan-border) ;
+    box-shadow: 0px 5px 15px 0px var(--cyan-shadow);
+}
+
+.mac-btn {
+    background-color: var(--light-blue);
+    border-bottom: 3px solid var(--blue-border) ;
+    box-shadow: 0px 5px 15px 0px rgb(61, 84, 255, 0.5);
+}
+
+.mac-btn:hover {
+    
+    background-color: var(--blue-hover);
+    border-bottom: 3px solid rgb(61, 84, 255, 0.5) ;
+    color: #fff;
+}
