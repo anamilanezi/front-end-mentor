@@ -10,7 +10,8 @@
     --blue-border: hsl(233, 100%, 62%);
     --blue-shadow: rgb(61, 84, 255, 0.5);
     --dark-gray: hsl(210, 10%, 33%);
-    --gray: hsl(201, 11%, 66%)
+    --gray: hsl(201, 11%, 66%);
+    --light-gray: rgb(245, 246, 248);
 }
 
 body {
@@ -18,6 +19,7 @@ body {
     font-size: 18px;
     text-align: center;
     color: var(--gray);
+
 }
 
 h1, h2, h3 {
@@ -37,8 +39,13 @@ p {
     line-height: 1.6;
 }
 
+
 .container-fluid {
     padding: 0;
+}
+
+.row {
+    margin: 0;
 }
 
 .page-header {
@@ -59,12 +66,11 @@ p {
 
 .btn {
     color: #fff;
-    padding: 15px;
     letter-spacing: 1px;
     font-size: 1.1rem;
-    margin: 10px;
+    padding: 14px 36px;
+    margin: 0 10px;
 }
-
 .ios-btn {
     background-color: var(--strong-cyan);
     border-bottom: 3px solid var(--cyan-border) ;
@@ -94,7 +100,7 @@ p {
 /* Features */
 
 .title {
-    padding: 5% 25% 5%;
+    padding: 5% 25%;
     font-size: 1.3rem;
 }
 
@@ -129,28 +135,51 @@ p {
 /* Tools */
 
 .tools-row {
-    padding: 0 10%;
+    padding: 3% 10%;
+}
+
+.tool-card {
+    padding: 7% 1%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .tool-icon {
-    width: 75px;
+    width: 50px;
 }
 
 /* Press  */
 
+.press {
+    padding: 7%;
+}
+
 
 /* Call for Action */
 
-.cta .title {
-    padding-bottom: 2%;
-}
 
 
 /* Footer */
 
 .page-footer {
-    background-color: var(--gray);
+    background-color: var(--light-gray);
+    padding: 3% 5%;
+    color: var(--dark-gray);
 }
+
+.footer-logo {
+    width: 60px;
+}
+
+.brands-footer {
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 @media screen and (max-width: 1000px) {
 
