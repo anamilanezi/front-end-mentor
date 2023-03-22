@@ -106,10 +106,6 @@ p {
     font-size: 1.3rem;
 }
 
-/* .features-title {
-    padding: 0 25% 5%;
-} */
-
 .features-list {
     display: flex;
     flex-direction: column;
@@ -178,6 +174,18 @@ p {
     width: 60px;
 }
 
+.nav-footer {
+    display: flex;
+    height: 90px;
+    flex-flow: column wrap;
+    justify-content: start;
+    text-align: left;
+}
+
+.nav-item {
+    padding: 1% 0;
+}
+
 .brands-footer {
     font-size: 1.5rem;
     display: flex;
@@ -226,6 +234,21 @@ p {
     .devices-image {
         background-size: 100%;
         min-height: 400px;
+    }
+
+    .page-footer {
+        text-align: center;
+    }
+
+    .nav-footer {
+        padding: 15% 0;
+        height: auto;
+        justify-content: start;
+        text-align: center;
+    }
+
+    .nav-item {
+        padding: 3% 0;
     }
     
 }
