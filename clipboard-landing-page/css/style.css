@@ -207,7 +207,7 @@ p {
     }
 
     .devices {
-        padding: 25% 10%;
+        padding: 25% 10% 10%;
         
     }
 
@@ -217,7 +217,12 @@ p {
     }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 750px) {
+
+    .btn {
+        margin: 3%;
+    }
+
     .devices-image {
         background-size: 100%;
         min-height: 400px;
