@@ -27,12 +27,14 @@ h1, h2, h3 {
     color: var(--dark-gray);
 }
 
+
 h1 {
     font-size: 3rem;
 }
 
 h2 {
     font-size: 2.5rem;
+    padding-bottom: 1rem;
 }
 
 p {
@@ -135,20 +137,21 @@ p {
 /* Tools */
 
 .tools-row {
-    padding: 3% 10%;
+    padding: 0 10%;
 }
 
 .tool-card {
-    padding: 7% 1%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: start;
 }
 
-.tool-icon {
-    width: 50px;
+.icon-container {
+    width: 75px;
+    height: 90px;
 }
+
 
 /* Press  */
 
@@ -159,7 +162,9 @@ p {
 
 /* Call for Action */
 
-
+.cta {
+    padding-bottom: 7%;
+}
 
 /* Footer */
 
