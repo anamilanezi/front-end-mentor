@@ -65,6 +65,8 @@ h1, h2, nav {
 .header-title p {
     line-height: 1.7;
     padding-right: 7%;
+    /* margin-bottom: ; */
+    
 }
 
 .form-header {
@@ -105,15 +107,13 @@ h1, h2, nav {
 /* Middle div  */
 
 .curved-background {
-    background-image: url('../images/bg-curve-desktop.svg');
-    background-repeat: no-repeat;
-    background-size: contain;
-    height: 120px;
-    background-position-y: 20px;
+    margin-top: 10%;
 }
 
 /* Middle container  */
-
+.middle {
+    background-color: var(--white-blue);
+}
 
 .middle-image {
     margin-top: 10%;
@@ -121,12 +121,8 @@ h1, h2, nav {
     background-repeat: no-repeat;
     background-size: contain;
     height: 400px;
-
 }
 
-.middle {
-    background-color: var(--white-blue);
-}
 
 .middle-p {
     padding: 2% 20% 0 0;
