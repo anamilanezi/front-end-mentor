@@ -19,12 +19,13 @@ body {
     font-family: 'Open Sans', sans-serif;
     color: var(--dark-blue);
     text-align: left;
-    font-size: 1.2rem;
+    font-size: 18px;
 }
 
 h1, h2, nav {
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
+    line-height: 1.5;
 }
 
 ::placeholder {
@@ -32,18 +33,25 @@ h1, h2, nav {
     padding: 5%;
 }
 
-
-/* Bootstrap Classes */
+/* Bootstrap container  */
 
 .container-fluid {
-    padding: 2% 5%;
+    padding: 0;
 }
 
 
 /* Header */
 
+.page-container {
+    padding: 2% 5%;
+}
+
+.logo-header {
+    width: 80%;
+}
+
 .page-header {
-    padding: 7% 0
+    padding: 5% 0;
 }
 
 .header-title {
@@ -52,6 +60,10 @@ h1, h2, nav {
     justify-content: center;
 }
 
+.header-title p {
+    line-height: 1.7;
+    padding-right: 7%;
+}
 
 .form-header {
     display: flex;
@@ -88,3 +100,31 @@ h1, h2, nav {
     height: 450px;
 }
 
+/* Middle div  */
+
+.curved-background {
+    background-image: url('../images/bg-curve-desktop.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 120px;
+    background-position-y: 20px;
+}
+
+/* Middle container  */
+
+
+.middle-image {
+    background-image: url('../images/illustration-2.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 400px;
+
+}
+
+.middle {
+    background-color: var(--white-blue);
+}
+
+.middle-title p {
+    padding-right: 20%;
+}
