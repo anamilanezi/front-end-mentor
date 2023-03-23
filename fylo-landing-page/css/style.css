@@ -32,11 +32,12 @@ h1, h2, nav {
 
 input {
     font-size: 0.8rem;
-    height: 40px;
+    height: 50px;
     padding: 3%;
     margin-bottom: 10px;
     border-radius: 5px;
-    box-shadow: 1px 1px 10px hsla(228, 3%, 32%, 0.5);
+    border: 1px solid var(--dark-blue);
+    box-shadow: 1px 1px 10px hsla(228, 3%, 32%, 0.2);
 }
 
 button {
@@ -45,7 +46,7 @@ button {
     font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 1px;
-    height: 40px;
+    height: 50px;
     border: none;
     border-radius: 3px;
     box-shadow: 1px 1px 10px hsla(228, 3%, 32%, 0.5);
@@ -105,17 +106,13 @@ button:hover {
 .email-header {
     width: 100%;
     font-size: 0.8rem;
-    height: 40px;
     margin-bottom: 10px;
     padding: 3%;
 }
 
-
 .btn-header {
     width: 100%;
 }
-
-
 
 .header-image {
     background-image: url('../images/illustration-1.svg');
@@ -225,11 +222,16 @@ button:hover {
     width: 70%;
 }
 
+.btn-cta {
+    width: 40%;
+}
+
 .form-cta {
     padding-left: 10%;
     display: flex;
     flex-direction: column;
 }
+
 
 /* .hidden {
     display: none;
