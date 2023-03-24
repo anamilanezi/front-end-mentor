@@ -70,7 +70,7 @@ button:hover {
 /* Header */
 
 .page-container {
-    padding: 3% 5%;
+    padding: 4% 7%;
 }
 
 .logo-header {
@@ -89,7 +89,7 @@ button:hover {
 
 .header-text {
     line-height: 1.7;
-    padding-right: 7%;
+    padding-right: 10%;
     /* margin-bottom: ; */
     
 }
@@ -232,13 +232,48 @@ button:hover {
     flex-direction: column;
 }
 
+/* Footer  */
+
+.page-footer {
+    padding-top: 7%;
+    background-color: var(--dark-blue);
+    color: #fff;
+}
+
+.footer-logo {
+    filter: invert(85%) sepia(76%) saturate(0%) hue-rotate(27deg) brightness(500%) contrast(101%);
+    margin-bottom: 5%
+}
+
+.nav-footer {
+    padding: 3% 5%;
+    display: flex;
+    height: 200px;
+    flex-flow: column wrap;
+    justify-content: start;
+    text-align: left;
+}
+
+.nav-item {
+    padding: 1% 0;
+}
+
+.brands-footer {
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 
 /* .hidden {
     display: none;
 } */
 
 
-@media screen and (max-width: 1050px) {
+
+@media screen and (max-width: 1000px) {
 
     body {
         text-align: center;
@@ -250,6 +285,11 @@ button:hover {
 
     .header-text {
         padding: 0 5%;
+    }
+
+    .header-image {
+        margin-top: 10%;
+        background-position: center;
     }
 
     .form-header {
@@ -268,6 +308,10 @@ button:hover {
         text-align: left;
     }
 
+    .info-image {
+        background-position: center;
+    }
+
    .testimonial-container  {
 
         margin: 7% auto;
@@ -279,7 +323,23 @@ button:hover {
     }
 }
 
+
+
 @media screen and (max-width: 750px) {
 
+    .page-footer {
+        text-align: left;
+    }
+
+    .nav-footer {
+        padding: 15% 0;
+        height: auto;
+        justify-content: start;
+        text-align: start;
+    }
+
+    .nav-item {
+        padding: 3% 0;
+    }
 
 }
