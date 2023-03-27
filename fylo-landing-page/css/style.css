@@ -124,7 +124,7 @@ button:hover {
 /* Middle div  */
 
 .curved-background {
-    margin-top: 7%;
+    margin-top: 5%;
 }
 
 /* Middle container - Informations  */
@@ -269,6 +269,13 @@ button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.attribution {
+    font-size: 0.7rem;
+    text-decoration: none;
+    text-align: center;
+    color: var(--desaturated-blue)
 }
 
 
