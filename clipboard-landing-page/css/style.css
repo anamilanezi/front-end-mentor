@@ -201,6 +201,12 @@ p {
     align-items: center;
 }
 
+.attribution {
+    margin-top: 3%;
+    font-size: 0.8rem;
+    color: var(--blue-hover);
+}
+
 
 @media screen and (max-width: 1000px) {
 
