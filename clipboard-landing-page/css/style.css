@@ -184,6 +184,14 @@ p {
 
 .nav-item {
     padding: 1% 0;
+    text-decoration: none;
+    color: var(--dark-gray);
+}
+
+.nav-item:hover {
+    padding: 1% 0;
+    text-decoration: none;
+    color: var(--strong-cyan);
 }
 
 .brands-footer {
