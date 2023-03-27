@@ -256,6 +256,12 @@ button:hover {
 
 .nav-item {
     padding: 1% 0;
+    text-decoration: none;
+    color: #fff;
+}
+
+.nav-item:hover {
+    color: var(--sky-blue);
 }
 
 .brands-footer {
