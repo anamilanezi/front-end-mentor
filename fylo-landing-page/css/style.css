@@ -129,7 +129,7 @@ button:hover {
 
 /* Middle container - Informations  */
 .info {
-    background-color: var(--white-blue);
+    background-color: #f8f8fe;
 }
 
 .info-image {
