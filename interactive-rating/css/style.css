@@ -37,6 +37,8 @@ button {
     font-family: inherit;
 }
 
+/* Container and common elements  */
+
 .container {
     background-color: var(--Dark-Blue);
     display         : flex;
@@ -66,9 +68,22 @@ button {
     z-index: 1;
 }
 
+.title {
+    color: var(--White);
+}
+
+.content-text {
+    margin-top : -1.1rem;
+    padding    : 0 1rem 0 0;
+    line-height: 1.5rem;
+}
+
+/* Rating Page  */
+
 .fa-star {
     color: var(--Orange);
 }
+
 
 .circle {
     background-color: var(--Dark-Grey);
@@ -96,22 +111,14 @@ button {
     background-color: var(--Medium-Grey);
 }
 
-.title {
-    color: var(--White);
-}
-
-.content-text {
-    margin-top : -1.1rem;
-    padding    : 0 1rem 0 0;
-    line-height: 1.5rem;
-}
-
 .rating-list {
     display        : flex;
     list-style     : none;
     justify-content: space-between;
     align-items    : center;
 }
+
+/* Submit Button  */
 
 .btn {
     background-color: var(--Orange);
@@ -132,6 +139,9 @@ button {
     color           : var(--Orange);
     cursor          : pointer;
 }
+
+
+/* Submited Page  */
 
 .submited {
     text-align: center;
