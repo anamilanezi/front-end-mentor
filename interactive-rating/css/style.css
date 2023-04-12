@@ -61,6 +61,7 @@ button {
     flex-direction : column;
     justify-content: space-around;
     position       : absolute;
+    transition: opacity 0.5s ease-in;
 }
 
 .child.active {
@@ -118,13 +119,25 @@ button {
     align-items    : center;
 }
 
+.error-message {
+    color: var(--Medium-Orange);
+    font-style: italic;
+    transition: opacity 0.1s ease-in;
+    
+}
+
+.hidden {
+    opacity: 0;
+    transition: opacity 0.1s ease-in;
+}
+
 /* Submit Button  */
 
 .btn {
     background-color: var(--Orange);
     color           : var(--White);
     width           : 100%;
-    margin-top      : 1rem;
+    
     border          : none;
     border-radius   : 30px;
     padding         : 0.9rem 0;

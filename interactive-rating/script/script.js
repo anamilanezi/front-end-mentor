@@ -1,15 +1,16 @@
 const child = document.querySelectorAll('.child')
 const ratings = document.querySelectorAll('.rating');
 const userRating = document.querySelector('.user-rating');
-const submit = document.getElementById('submit')
+const submit = document.querySelector('#submit')
+const errorMsg = document.querySelector('.error-message')
 let selectedRating;
-const outsideClick = [true];
+let outsideClick = true;
 
 
 document.addEventListener('click', (e) => {
     const submitClick = submit.contains(e.target);
     if (!submitClick) {
-        outsideClick[0] = false;
+        outsideClick = false;
     }
     
     console.log(outsideClick)
@@ -19,9 +20,10 @@ document.addEventListener('click', (e) => {
 submit.addEventListener('submit', (e) => {
     e.preventDefault();
     e.stopPropagation();
-    if ((userRating.textContent === "") || !outsideClick[0]) {
-        alert("select a rating")
+    if ((userRating.textContent === "") || !outsideClick) {
+        errorMsg.classList.remove('hidden')
     } else {
+        // Do something with userRating
         console.log(userRating)
         child[0].classList.remove('active')
         child[1].classList.add('active')
@@ -31,9 +33,13 @@ submit.addEventListener('submit', (e) => {
 for (const r of ratings) {
     r.addEventListener('click', (e) => {
         e.stopPropagation()
-        outsideClick[0] = true
+        outsideClick = true
+        
+        errorMsg.classList.add('hidden')
+        
         selectedRating = r.children[0].textContent;
         userRating.textContent = selectedRating;
         console.log(userRating);
     });
 };
+
