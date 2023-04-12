@@ -3,16 +3,23 @@ const ratings = document.querySelectorAll('.rating');
 const userRating = document.querySelector('.user-rating');
 const submit = document.getElementById('submit')
 let selectedRating;
+const outsideClick = [true];
 
-document.addEventListener('click', () => {
-    console.log(userRating)
+
+document.addEventListener('click', (e) => {
+    const submitClick = submit.contains(e.target);
+    if (!submitClick) {
+        outsideClick[0] = false;
+    }
+    
+    console.log(outsideClick)
 })
 
 
 submit.addEventListener('submit', (e) => {
     e.preventDefault();
-    alert("Hello")
-    if (userRating.textContent === "") {
+    e.stopPropagation();
+    if ((userRating.textContent === "") || !outsideClick[0]) {
         alert("select a rating")
     } else {
         console.log(userRating)
@@ -22,10 +29,10 @@ submit.addEventListener('submit', (e) => {
 })
 
 for (const r of ratings) {
-    r.addEventListener('click', () => {
-
+    r.addEventListener('click', (e) => {
+        e.stopPropagation()
+        outsideClick[0] = true
         selectedRating = r.children[0].textContent;
-    
         userRating.textContent = selectedRating;
         console.log(userRating);
     });
