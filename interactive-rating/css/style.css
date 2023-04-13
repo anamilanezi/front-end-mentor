@@ -182,6 +182,27 @@ body.js-stop-transition * { transition:none !important; }
     border-radius: 15px;
 }
 
+/* Attribution  */
+.attribution {
+    font-size: 0.7rem;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--Light-Grey);
+    position: absolute;
+    bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+.attribution a {
+    color: var(--Orange);
+    text-decoration: none;
+}
+
+.attribution a:hover {
+    color: var(--White);
+}
+
 
 @media screen and (max-width: 470px) {
     .container {

@@ -7,9 +7,11 @@ const container = document.querySelector('.container')
 let selectedRating;
 let outsideClick = true;
 
-
+// Prevents effect when loading page
 document.body.classList.remove('js-stop-transition')
 
+
+// Calcel last rating selected after clicking outside 
 document.addEventListener('click', (e) => {
     const submitClick = submit.contains(e.target);
     if (!submitClick) {
@@ -21,58 +23,52 @@ document.addEventListener('click', (e) => {
     console.log(outsideClick)
 })
 
+// Removes highlightening when note hovering circles 
 container.addEventListener('mouseover', () => {
     ratings.forEach(rating => {
-        if ((userRating.textContent === "") || !outsideClick) { rating.classList.remove('fill') }
+        if ((userRating.textContent === "") || !outsideClick) { 
+            rating.classList.remove('fill') 
+        }
     })
 })
 
-
-// for (const r of ratings) {
-//     r.addEventListener('click', (e) => {
-//         e.stopPropagation()
-//         outsideClick = true
-
-//         errorMsg.classList.add('hidden')
-
-//         selectedRating = r.children[0].textContent;
-//         userRating.textContent = selectedRating;
-//         console.log(userRating);
-//     });
-// };
-
-
+// Adding event listener on rating circles
 ratings.forEach(
-    (rating, index1) => {
+    (rating, i) => {
+        // Highlight previous circles when hovering
         rating.addEventListener('mouseover', (e) => {
             e.stopPropagation();
-            const smallNum = Array.from(ratings).slice(0, index1)
-            console.log(smallNum)
+            const smallNum = Array.from(ratings).slice(0, i)
             smallNum.forEach((num) => {
-
                 num.classList.add('fill')
             })
         })
+
+        // Select a rating, updates value and fill previous circles after selecting
         rating.addEventListener('click', (e) => {
             e.stopPropagation();
             errorMsg.classList.add('hidden');
             outsideClick = true;
-            selectedRating = index1 + 1;
+            selectedRating = i + 1;
             userRating.textContent = selectedRating;
-            ratings.forEach((rating, index2) => {
-                index1 >= index2 ? rating.classList.add('fill') : rating.classList.remove('fill');
+            ratings.forEach((rating, j) => {
+                i >= j ? rating.classList.add('fill') : rating.classList.remove('fill');
             })
         })
 
     })
 
+
+// Submit results after one is selected
 submit.addEventListener('submit', (e) => {
     e.preventDefault();
     e.stopPropagation();
+
+    // Checks if the rating was selected and wasn't canceled by click outside
     if ((userRating.textContent === "") || !outsideClick) {
         errorMsg.classList.remove('hidden')
     } else {
-        // Do something with userRating
+        // Do something with userRating and change content visibility 
         console.log(userRating)
         child[0].classList.remove('active')
         child[1].classList.add('active')
