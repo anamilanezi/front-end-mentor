@@ -6,10 +6,12 @@
     --White         : hsl(0, 0%, 100%);
     --Light-Grey    : hsl(217, 12%, 63%);
     --Medium-Grey   : hsl(214, 12%, 54%);
-    --Dark-Grey     : hsl(208, 20%, 15%);
+    /* --Dark-Grey     : hsl(208, 20%, 15%); */
+    --Dark-Grey: hsl(210, 19%, 18%);
     --Dark-Grey-2   : hsl(216, 11%, 18%);
     --Dark-Blue     : hsl(217, 20%, 13%);
     --Very-Dark-Blue: hsl(216, 12%, 8%);
+    /* hsl(213, 19%, 18%) */
 }
 
 
@@ -35,6 +37,7 @@ body {
 
 button {
     font-family: inherit;
+    transition: background-color 0.3s ease-in;
 }
 
 /* Container and common elements  */
@@ -42,13 +45,14 @@ button {
 body.js-stop-transition * { transition:none !important; }
 
 .container {
+    background-image: radial-gradient(circle at top, hsla(213, 19%, 18%, 0.8), hsla(217, 20%, 13%, 0.8));
     background-color: var(--Dark-Blue);
     display         : flex;
     flex-direction  : column;
     align-items     : center;
     justify-content : center;
-    height          : 60vh;
-    width           : 60vh;
+    height          : 55vh;
+    width           : 55vh;
     border-radius   : 40px;
 
     position: relative;
@@ -99,7 +103,6 @@ body.js-stop-transition * { transition:none !important; }
     display         : flex;
     justify-content : center;
     align-items     : center;
-    transition: 100ms ease-in;
 }
 
 .circle.rating:hover {
@@ -114,7 +117,6 @@ body.js-stop-transition * { transition:none !important; }
 
 .fill {
     background-color: var(--Medium-Grey);
-    transition: 100ms ease-in;
 }
 
 .rating-list {
@@ -128,7 +130,7 @@ body.js-stop-transition * { transition:none !important; }
     color: var(--Medium-Orange);
     font-style: italic;
     transition: opacity 0.1s ease-in;
-    
+    /* padding: 0; */
 }
 
 .hidden {
@@ -156,6 +158,7 @@ body.js-stop-transition * { transition:none !important; }
     background-color: var(--White);
     color           : var(--Orange);
     cursor          : pointer;
+    transition: background-color 0.3s ease-in;
 }
 
 
