@@ -23,7 +23,7 @@
   <!-- Rating state start -->
   <main class="container">
     <div class="child active">
-      <div class="circle"><i class="fa-solid fa-star"></i></div>
+      <div class="circle star"><i class="fa-solid fa-star"></i></div>
       <h1 class="title">How did we do?</h1>
 
       <p class="content-text ">
@@ -31,16 +31,17 @@
         to help us improve our offering!
       </p>
 
-      
-      <ul class="rating-list">
-        <li><button class="circle rating">1</button></li>
-        <li><button class="circle rating">2</button></li>
-        <li><button class="circle rating">3</button></li>
-        <li><button class="circle rating">4</button></li>
-        <li><button class="circle rating">5</button></li>
-      </ul>
+      <div class="rating-box">
 
-      <small class="error-message">Please select a rating before submitting</small>
+        <ul class="rating-list">
+          <li><button class="circle rating">1</button></li>
+          <li><button class="circle rating">2</button></li>
+          <li><button class="circle rating">3</button></li>
+          <li><button class="circle rating">4</button></li>
+          <li><button class="circle rating">5</button></li>
+        </ul>
+        <p class="error-message">Please select a rating before submitting</p>
+      </div>
 
       <form action="" id="submit">
         <button class="btn" type="submit">Submit</button>
@@ -61,12 +62,13 @@
 
   </main>
 
-<footer>
+  <footer>
     <p class="attribution">
-      Challenge by <a class="nav-item" href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>
+      Challenge by <a class="nav-item" href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend
+        Mentor</a>
       Coded by <a class="nav-item" href="https://github.com/anamilanezi" target="_blank">Ana Milanezi</a>
     </p>
-</footer>
+  </footer>
 
   <script src="script/script.js"></script>
 </body>

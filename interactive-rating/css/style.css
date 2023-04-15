@@ -1,17 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
 
 :root {
-    --Medium-Orange: hsl(26, 55%, 48%);
+    --Medium-Orange : hsl(26, 55%, 48%);
     --Orange        : hsl(25, 97%, 53%);
     --White         : hsl(0, 0%, 100%);
     --Light-Grey    : hsl(217, 12%, 63%);
     --Medium-Grey   : hsl(214, 12%, 54%);
-    /* --Dark-Grey     : hsl(208, 20%, 15%); */
-    --Dark-Grey: hsl(210, 19%, 18%);
+    --Dark-Grey     : hsl(210, 19%, 18%);
     --Dark-Grey-2   : hsl(216, 11%, 18%);
     --Dark-Blue     : hsl(217, 20%, 13%);
     --Very-Dark-Blue: hsl(216, 12%, 8%);
-    /* hsl(213, 19%, 18%) */
 }
 
 
@@ -45,23 +43,23 @@ button {
 body.js-stop-transition * { transition:none !important; }
 
 .container {
-    background-image: radial-gradient(circle at top, hsla(213, 19%, 18%, 0.8), hsla(217, 20%, 13%, 0.8));
+    background-image: radial-gradient(circle at top, hsla(213, 19%, 18%, 1), hsla(217, 20%, 13%, 1));
     background-color: var(--Dark-Blue);
     display         : flex;
     flex-direction  : column;
     align-items     : center;
     justify-content : center;
-    height          : 55vh;
-    width           : 55vh;
+    height          : 415px;
+    width           : 415px;
     border-radius   : 40px;
-
+    box-shadow: 0 2px 2px var(--Dark-Blue);
     position: relative;
 
 }
 
 .child {
     opacity        : 0;
-    padding        : 2rem 2.5rem;
+    padding        : 1.5rem 2rem;
     color          : var(--Medium-Grey);
     height         : 100%;
     display        : flex;
@@ -82,7 +80,7 @@ body.js-stop-transition * { transition:none !important; }
 
 .content-text {
     margin-top : -1.1rem;
-    padding    : 0 1rem 0 0;
+    padding    : 10px 1rem 0 0;
     line-height: 1.5rem;
 }
 
@@ -97,12 +95,17 @@ body.js-stop-transition * { transition:none !important; }
     background-color: var(--Dark-Grey);
     color           : var(--White);
     border          : none;
-    width           : 3.5rem;
-    height          : 3.5rem;
+    width           : 3.2rem;
+    height          : 3.2rem;
     border-radius   : 50%;
     display         : flex;
     justify-content : center;
     align-items     : center;
+}
+
+.circle.star {
+    width: 3rem;
+    height: 3rem;
 }
 
 .circle.rating:hover {
@@ -124,13 +127,18 @@ body.js-stop-transition * { transition:none !important; }
     list-style     : none;
     justify-content: space-between;
     align-items    : center;
+    margin-top: 15px;
+
 }
 
 .error-message {
     color: var(--Medium-Orange);
+    text-align: center;
+    font-size: 0.8rem;
     font-style: italic;
+    margin-top: 10px;
     transition: opacity 0.1s ease-in;
-    /* padding: 0; */
+
 }
 
 .hidden {
