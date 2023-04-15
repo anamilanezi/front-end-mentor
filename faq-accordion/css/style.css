@@ -44,6 +44,7 @@ a {
 }
 
 .container {
+    position: relative;
     background-color:#fff;
     width: 64vw;
     height: 64vh;
@@ -150,3 +151,13 @@ a {
 
 }
 
+@media screen and (max-width: 1000px) {
+    .container {
+        width: 80vw;
+    }
+
+    .faq-box {
+        width: 60%;
+        padding: 3rem 1.5rem;
+    }
+}
