@@ -12,5 +12,6 @@ questions.forEach(question =>
         question.querySelector('.faq-question').classList.toggle('active');
         question.querySelector('.faq-arrow').classList.toggle('up');
         question.nextElementSibling.classList.toggle('hidden');
+        console.log("Finished")
     }
     ))

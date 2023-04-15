@@ -103,12 +103,18 @@ hr {
     align-items: center;
 }
 
+.faq-question-box:hover {
+    cursor: pointer;
+}
+
 .faq-question {
     display: inline-block;
     font-size: 0.9rem;
     font-weight: 400;
-    
+}
 
+.faq-question-box:hover {
+    color: var(--soft-red)
 }
 
 .faq-question.active {
@@ -131,14 +137,13 @@ hr {
     display: block;
     line-height: 1.7;
     padding-right: 13px;
+    transition: opacity 0.1s linear;
+
 }
 
 .hidden {
-    display: none;
-    transition: display 0.5s linear;
-
-}
-
-.visually-hidden {
     opacity: 0;
+    height: 0;
+
 }
+
