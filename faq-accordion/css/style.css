@@ -38,6 +38,11 @@ hr {
     border-bottom: 1px solid var(--white);
 }
 
+a {
+    text-decoration: none;  
+    color: inherit;
+}
+
 .container {
     background-color:#fff;
     width: 64vw;
@@ -105,6 +110,7 @@ hr {
 
 .faq-question-box:hover {
     cursor: pointer;
+    color: var(--soft-red)
 }
 
 .faq-question {
@@ -113,9 +119,6 @@ hr {
     font-weight: 400;
 }
 
-.faq-question-box:hover {
-    color: var(--soft-red)
-}
 
 .faq-question.active {
     font-weight: 700;

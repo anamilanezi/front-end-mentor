@@ -39,9 +39,6 @@ questionBoxes.forEach(questionBox =>
             questionBox.nextElementSibling.classList.toggle('hidden');
             console.log("Finished")
         }
-
-
-
     }
     ))
 
