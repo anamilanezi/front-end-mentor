@@ -130,15 +130,12 @@ a {
     background-repeat: no-repeat;
     background-position: center;
     transition: all .2s ease-out;
-    /* list-style-position: inside; */
 }
-
-
 
 .faq-question-box:hover {
     cursor: pointer;
     color: var(--soft-red);
-    font-weight: 700;
+
 }
 
 [open] .faq-question-box {
@@ -156,8 +153,7 @@ a {
 .faq-answer {
     display: block;
     line-height: 1.7;
-    padding-right: 13px;
-    transition: opacity 0.1s linear;
+    padding: 10px 13px 0 0;
 
 }
 
