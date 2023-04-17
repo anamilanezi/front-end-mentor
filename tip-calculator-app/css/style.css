@@ -132,6 +132,11 @@ input::-webkit-inner-spin-button {
     min-width: 50px;
 }
 
+.btn.active {
+    background-color: var(--strong-cyan);
+    color: var(--dark-cyan);
+}
+
 .btn:not(:nth-child(6)) {
     border: none;
 }
@@ -217,6 +222,7 @@ input::-webkit-inner-spin-button {
     color: var(--strong-cyan);
     align-items: end;
 }
+
 
 
 
