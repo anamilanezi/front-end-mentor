@@ -7,6 +7,8 @@
   <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="css/style.css">
   <title>Frontend Mentor | Tip calculator app</title>
 
@@ -23,10 +25,11 @@
   </header>
   <main class="app-container">
 
-    <form class="input-box">
+    <form class="form-box">
       <fieldset class="bill-box">
-        <label for="bill-total">Bill
-        <input class="number-input" id="bill-total" type="number" step=0.01 placeholder="0"></label>
+        <label for="bill-total">Bill</label>
+        <!-- <i class="fa-solid fa-dollar-sign"></i> -->
+        <input class="number-input" id="bill-total" type="number" step=0.01 placeholder="0">
       </fieldset>
       <fieldset class="tips-box">
         <label for="">Select Tip %</label>
@@ -41,9 +44,10 @@
           </div>
       </fieldset>
       <fieldset class="divisor-box">
-        <label for="divisor-total">Number of People
+        <label for="divisor-total">Number of People</label>
+        <!-- <i class="fa-solid fa-user"></i> -->
           <input class="number-input" id="divisor-total" type="number" placeholder="0">
-        </label>
+        
       </fieldset>
     </form>
     <section class="result-box">

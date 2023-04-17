@@ -2,6 +2,7 @@
 
 :root {
     --strong-cyan       : hsl(172, 67%, 45%);
+    --light-strong-cyan: hsl(171, 61%, 77%);
     --dark-cyan         : hsl(183, 100%, 15%);
     --medium-cyan       : hsl(183, 79%, 24%);
     --dark-grayish-cyan : hsl(186, 14%, 43%);
@@ -24,6 +25,7 @@ fieldset {
 body {
     background-color: var(--light-grayish-cyan);
     font-family: 'Space Mono', monospace;
+    font-weight: 700;
     height: 100vh;
     margin: 0;
     display: flex;
@@ -32,14 +34,17 @@ body {
     align-items: center;
 }
 
-input {
-    font-family: inherit;
+label {
+    display: block;
+    padding-bottom: 10px;
 }
 
-label > input {
-    display: block;
-    width: 100%;
+input {
+    font-family: inherit;
+    font-weight: inherit;
+    cursor: pointer;
 }
+
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -61,8 +66,8 @@ input::-webkit-inner-spin-button {
 
 .app-container {
     background-color: #fff;
-    height: 50vh;
-    width: 50vw;
+    height: 66vh;
+    width: 66vw;
     min-height: fit-content;
     max-width: 920px;
     max-height: 480px;
@@ -71,49 +76,62 @@ input::-webkit-inner-spin-button {
     
 }
 
-.input-box {
+/* LEFT CHILD CONTAINER - FORM BOX  */
+
+.form-box {
     padding: 2rem;
     width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    color: var(--dark-grayish-cyan);
 }
 
 
 .tips-grid-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     grid-template-rows: repeat(2, 1fr);
     grid-column-gap: 15px;
     grid-row-gap: 15px;
+    grid-auto-columns: minmax(0, 1fr);
+    grid-auto-flow: column;
 }
 
 .number-input {
-    border: none;
     background-color: var(--white-cyan);
+    color: var(--dark-cyan);
+    padding: 6px 10px;
+    border: 2px solid var(--white-cyan);
+    border-radius: 5px;
     text-align: right;
+    font-size: 24px;
+    display: block;
+    width: 100%;
 }
 
 .number-input:focus {
-    border: 2px solid var(--strong-cyan);;
-    
+    outline: none !important;
+    border: 2px solid var(--strong-cyan);
 }
+
 
 .btn {
     background-color: var(--dark-cyan);
-    color: #fff;
-    border: none;
+    color: var(--white-cyan);
     font-size: 18px;
-    font-weight: 700;
-    width: 100px;
-    height: 45px;
-    padding: 5px 10px;
+    padding: 10px;
     border-radius: 5px;
+    min-width: 50px;
 }
 
-.btn:hover {
-    cursor: pointer;
-    background-color: var(--light-grayish-cyan);
+.btn:not(:last-child) {
+    border: none;
+}
+
+.btn:hover:not(:last-child) {
+
+    background-color: var(--light-strong-cyan);
     color: var(--dark-cyan);
 }
 
@@ -138,19 +156,19 @@ input::-webkit-inner-spin-button {
     grid-area: 2 / 2 / 3 / 3; 
 }
 
-.btn-custom { 
-
+.btn-custom {
+    color: var(--dark-cyan);
     grid-area: 2 / 3 / 3 / 4; 
+    background-color: var(--white-cyan);
 }
-
 
 
 .btn-custom::placeholder {
-text-align: center;
+    text-align: center;
 }
 
 
-/* RESULT BOX  */
+/* RIGHT CONTAINER - RESULT BOX  */
 
 .result-box {
     background-color: var(--dark-cyan);
@@ -169,7 +187,7 @@ text-align: center;
         flex-direction: column;
     }
 
-    .input-box {
+    .form-box {
         width: 100%;
     }
 
