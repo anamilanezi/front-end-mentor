@@ -87,17 +87,7 @@ input::-webkit-inner-spin-button {
     color: var(--dark-grayish-cyan);
 }
 
-
-.tips-grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 15px;
-    grid-row-gap: 15px;
-    grid-auto-columns: minmax(0, 1fr);
-    grid-auto-flow: column;
-}
-
+/* User inputs  */
 .number-input {
     background-color: var(--white-cyan);
     color: var(--dark-cyan);
@@ -115,6 +105,23 @@ input::-webkit-inner-spin-button {
     border: 2px solid var(--strong-cyan);
 }
 
+#bill-total {
+    background: url('../images/icon-dollar.svg') no-repeat scroll 15px 15px;
+    padding-left:30px;
+}
+
+/* Gridsystem for tips buttons*/
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+    grid-auto-columns: minmax(0, 1fr);
+    grid-auto-flow: column;
+}
+
 
 .btn {
     background-color: var(--dark-cyan);
@@ -130,31 +137,19 @@ input::-webkit-inner-spin-button {
 }
 
 .btn:hover:not(:last-child) {
-
     background-color: var(--light-strong-cyan);
     color: var(--dark-cyan);
 }
 
+.btn-5  { grid-area: 1 / 1 / 2 / 2; }
 
-.btn-5  { 
-    grid-area: 1 / 1 / 2 / 2; 
-}
+.btn-10 { grid-area: 1 / 2 / 2 / 3; }
 
-.btn-10 { 
-    grid-area: 1 / 2 / 2 / 3; 
-}
+.btn-15 { grid-area: 1 / 3 / 2 / 4; }
 
-.btn-15 { 
-    grid-area: 1 / 3 / 2 / 4; 
-}
+.btn-25 { grid-area: 2 / 1 / 3 / 2; }
 
-.btn-25 { 
-    grid-area: 2 / 1 / 3 / 2; 
-}
-
-.btn-50 { 
-    grid-area: 2 / 2 / 3 / 3; 
-}
+.btn-50 { grid-area: 2 / 2 / 3 / 3; }
 
 .btn-custom {
     color: var(--dark-cyan);
@@ -162,12 +157,15 @@ input::-webkit-inner-spin-button {
     background-color: var(--white-cyan);
 }
 
-
 .btn-custom::placeholder {
     text-align: center;
 }
 
-
+/* Number of people */
+#divisor-total {
+    background: url('../images/icon-person.svg') no-repeat scroll 15px 15px;
+    padding-left:30px;
+}
 /* RIGHT CONTAINER - RESULT BOX  */
 
 .result-box {
@@ -195,9 +193,9 @@ input::-webkit-inner-spin-button {
         width: 100%;
     }
 
-    .tips-grid-container {
+    .tips-grid {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         grid-template-rows: repeat(3, 1fr);
         grid-column-gap: 15px;
         grid-row-gap: 15px;
