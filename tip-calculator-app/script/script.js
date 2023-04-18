@@ -1,9 +1,8 @@
-
 const billTotal = document.getElementById('bill-total')
 const numOfPeople = document.getElementById('divisor-total');
-const tipButtons = document.querySelectorAll('input.btn');
 const tipCustom = document.querySelector('.btn-custom')
 
+const tipButtons = document.querySelectorAll('input.btn');
 const inputValues = document.querySelectorAll('.number-input')
 
 const tipResult = document.querySelector('.tip-result')
@@ -35,46 +34,66 @@ tipButtons.forEach((btnActive, i) => {
     })
 })
 
+
 // tipCustom.addEventListener('input', () => {
-//     // console.log(typeof(tipCustom.value), billTotal.value, numOfPeople.value)
-//     calculateTip(tipCustom.value, billTotal.value, numOfPeople.value)
-// })
-
-// billTotal.addEventListener('input', () => {
-//     // console.log(typeof(tipCustom.value), billTotal.value, numOfPeople.value)
-//     calculateTip(tipCustom.value, billTotal.value, numOfPeople.value)
-// })
-
-// numOfPeople.addEventListener('input', () => {
-//     // console.log(typeof(tipCustom.value), billTotal.value, numOfPeople.value)
 //     calculateTip(tipCustom.value, billTotal.value, numOfPeople.value)
 // })
 
 
 inputValues.forEach((input) => {
     input.addEventListener('input', () => {
-        calculateTip(tipCustom.value, billTotal.value, numOfPeople.value)
+        let btnActive = document.querySelector('.active')
+        if (tipCustom.value === "" && btnActive != null) {
+            selectedTip = btnActive.value
+        } else {
+            selectedTip = tipCustom.value
+        }
+        calculateTip(selectedTip, billTotal.value, numOfPeople.value)
 
-        // calculateTip(inputValues[1].value, inputValues[0].value, inputValues[2].value)
     })
+})
+
+reset.addEventListener('click', () => {
+    tipButtons.forEach(btnDisabled => {
+        btnDisabled.classList.remove('active')
+    })
+    selectedTip.value = "";
+    billTotal.value = "";
+    numOfPeople.value = "";
+    reset.disabled = true;
+    tipResult.innerHTML = "$0.00"
+    totalResult.innerHTML = "$0.00"
 })
 
 
 
 // Fazer uma função construtora, que muda tip 
 const calculateTip = (tip, total, num) => {
+
+    if (num == 0 || num == "") {
+        console.log('zero')
+    }
+
     if (tip != "" && total != "" && num != "") {
-        const tipAmountTotal = parseFloat(total) * (parseInt(tip) / 100);
-        const totalPerson = (parseFloat(total) + tipAmountTotal) / parseInt(num);
-        const tipPerson = tipAmountTotal / parseInt(num);
-    
-        tipResult.innerHTML = `$${tipPerson}`;
+        let tipAmountTotal = parseFloat(total) * (parseInt(tip) / 100);
+        let totalPerson = (parseFloat(total) + tipAmountTotal) / parseInt(num);
+        let tipPerson = tipAmountTotal / parseInt(num);
+        
+        totalPerson = roundMoney(totalPerson)
+        tipPerson = roundMoney(tipPerson)
+
+        console.log(tipPerson)
+        
         totalResult.innerHTML = `$${totalPerson}`;
+        tipResult.innerHTML = `$${tipPerson}`;
+        
         reset.disabled = false;
     }
     
 
 }
+
+const roundMoney = num => (Math.round((num + Number.EPSILON) * 100) / 100).toFixed(2)
 
 
 
