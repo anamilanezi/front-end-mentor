@@ -102,7 +102,7 @@ input::-webkit-inner-spin-button {
 
 /* User inputs  */
 .number-input {
-    background-color: var(--white-cyan);
+    background-color: var(--white-cyan) !important;
     color: var(--dark-cyan);
     padding: 6px 10px;
     border: 2px solid var(--white-cyan);
