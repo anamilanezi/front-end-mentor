@@ -78,9 +78,9 @@ input::-webkit-inner-spin-button {
 
 .app-container {
     background-color: #fff;
-    height: 66vh;
+    height: 55vh;
     width: 66vw;
-    /* min-height: fit-content; */
+    min-height: 400px;
     min-width: 650px;
     max-width: 920px;
     /* max-height: 480px; */
@@ -304,6 +304,22 @@ input::-webkit-inner-spin-button {
 
     .app-container {
         width: 80vw;
+    }
+
+}
+
+@media screen and (max-height: 600px) {
+
+    .app-container {
+        height: 70vw;
+    }
+
+    .title-box {
+        padding-bottom: 2rem;
+    }
+
+    .title-main, .title-sub {
+        padding: 0.5rem 0 0;
     }
 
 }
