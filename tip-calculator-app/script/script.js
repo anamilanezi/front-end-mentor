@@ -2,8 +2,9 @@ const billTotal = document.getElementById('bill-total')
 const numOfPeople = document.getElementById('divisor-total');
 const tipCustom = document.querySelector('.btn-custom')
 
+const inputValues = [billTotal, tipCustom, numOfPeople]
+
 const tipButtons = document.querySelectorAll('input.btn');
-const inputValues = document.querySelectorAll('.number-input')
 
 const tipResult = document.querySelector('.tip-result')
 const totalResult = document.querySelector('.total-result')
