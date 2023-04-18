@@ -71,7 +71,11 @@ reset.addEventListener('click', () => {
 const calculateTip = (tip, total, num) => {
 
     if (num == 0 || num == "") {
-        console.log('zero')
+        document.querySelector('.error-msg').classList.remove('hidden')
+        numOfPeople.classList.add('error')
+    } else {
+        document.querySelector('.error-msg').classList.add('hidden')
+        numOfPeople.classList.remove('error')
     }
 
     if (tip != "" && total != "" && num != "") {

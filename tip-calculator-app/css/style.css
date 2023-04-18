@@ -9,6 +9,7 @@
     --grayish-cyan      : hsl(184, 14%, 56%);
     --light-grayish-cyan: hsl(185, 41%, 84%);
     --white-cyan        : hsl(189, 41%, 97%);
+    --red: hsl(12, 60%, 60%);
 }
 
 * {
@@ -167,10 +168,33 @@ input::-webkit-inner-spin-button {
 }
 
 /* Number of people */
+
+.divisor-inline {
+    display: flex;
+    justify-content: space-between;
+}
+
+.error-msg {
+    color: var(--red);
+    transition: 0.2s ease-out;
+}
+
+.error-msg.hidden {
+    height: 0;
+    visibility: hidden;
+}
+
 #divisor-total {
     background: url('../images/icon-person.svg') no-repeat scroll 15px 15px;
     padding-left:30px;
 }
+
+.error#divisor-total {
+    outline: none !important;
+    border: 2px solid var(--red);
+}
+
+
 /* RIGHT CONTAINER - RESULT BOX  */
 
 .result-box {
