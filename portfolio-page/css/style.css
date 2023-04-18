@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Martian+Mono:wght@200;400;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Martian+Mono:wght@200;400;800&display=swap');
 
 
 :root { 
@@ -11,51 +11,49 @@
     --mostard: #d9a404; 
     --title-font: 'Bungee Shade', cursive;
     --content-font: 'Martian Mono', monospace;
+    --cream-2: #FFFBE0;
+    --teal: #008080;
+    --lemon: #ffff7e;
+    --green-yellow: #f6ffae;
 }
 
 body {
-    background-color: var(--dark-red);
+    background-color: var(--lemon);
     font-family: var(--content-font);
 }
 
-h1 {
-    color: var(--cherry-red);
-    font-family: var(--title-font);
-    font-size: 2.7rem;
+.heading-title {
+    color: var(--lemon);
+    font-family: var(--content-font);
+    font-weight: 800;
+    font-size: 3rem;
     padding-right: 5%;
 }
 
-h2 {
-    text-transform: uppercase;
-    font-weight: 800;
-    letter-spacing: 10px;
-    color: var(--mostard);
-}
 
 hr {
-    border: 2px solid var(--cream);
+    border: 2px solid var(--cream-2);
 }
 
-p {
-    color: var(--forest-green);
-}
 
 .row {
     padding: 0;
     height: auto;
 }
 
-#page-row {
-    background-color: var(--forest-green);
+.page-container {
+    background-color: var(--cream-2);
     width: 80%;
     margin: 0 auto;
 }
 
 /* Page Title  */
 
-#title {
-    background-color: var(--mostard);
+.page-title {
+    background-color:var(--teal);
     height: auto;
+    text-shadow: 2px 2px hsl(180, 95%, 22%);
+    animation: goRight 1.5s ease-out;
 }
 
 .challenges {
@@ -75,28 +73,46 @@ p {
 }
 
 .author {
-    font-weight: 800;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: 400;
     padding: 0 5%;
+    color: var(--green-yellow);
 }
 
 
-#contact-row {
+.contact-row {
     padding: 2% 5% 5% 60%;
 }
 
 .icon {
     font-size: 35px;
-    color: var(--dark-red);
+    color: var(--green-yellow);
 }
 
 .icon:hover {
-    color: var(--cream);
+    color: var(--lemon);
 }
 
 /* Gallery  */
 
-#gallery-col {
+.page-gallery {
     padding: 2%;
+}
+.page-gallery  h2 {
+    background-color: vaR(--lemon);
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 10px;
+    color: var(--teal);
+    padding: 0.5rem 1rem;
+    animation: goLeft 1.5s ease-out;
+}
+
+section.col.text-center {
+    animation: goUp 1.5s ease-out;
+    
+    
 }
 
 .preview-img {
@@ -104,7 +120,8 @@ p {
     max-width: 500px;
     height: auto;
     object-fit: cover;
-    filter: sepia(100%);
+    filter: grayscale(100%);
+    transition: 0.5s ease-out;
 }
 
 .preview-img:hover{
@@ -116,8 +133,8 @@ p {
 }
 
 .project-title{
-    background-color: var(--forest-green);
-    color: var(--cream);
+    background-color: var(--teal);
+    color: var(--cream-2);
     text-align: center;
     padding: 5px 0;
     font-weight: 800;
@@ -125,17 +142,60 @@ p {
 
 .card-footer a {
     text-transform: uppercase;
-    color: var(--cherry-red);
+    color: var(--teal);
 }
 
 .card-footer a:hover {
-    background-color: var(--cherry-red);
-    color: var(--cream);
+    background-color: var(--teal);
+    color: var(--cream-2);
 }
 
 
 .hidden {
     visibility: hidden;
+}
+
+@keyframes goUp {
+
+    0% {
+        opacity: 0;
+        transform: translate(0, 100vh);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+    
+}
+
+
+@keyframes goLeft {
+
+    0% {
+        opacity: 0;
+        transform: translate(100vh, 0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+    
+}
+
+@keyframes goRight {
+
+    0% {
+        opacity: 0;
+        transform: translate(-100vh, 0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+    
 }
 
 

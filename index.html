@@ -22,15 +22,13 @@
 
 <body>
 
-    <div class="row" id="page-row">
+    <div class="row page-container" >
 
-        <div class="col-lg-5" id="title">
-            <div class="description text-end">
-                <h1>Frontend Mentor <span class="challenges">Challenges</span></h1>
-                <p class="description-text">All submitted Frontend Mentor challenges, in order of completion and
-                    difficulty</p>
+        <nav class="col-lg-5 page-title" >
+            <header class="description text-end">
+                <h1 class="heading-title">Frontend Mentor <span class="challenges">Challenges</span></h1>
                 <p class="author"> by Ana M Milanezi</p>
-                <div class="row" id="contact-row">
+                <div class="row  contact-row">
                     <div class="col">
                         <a href="https://github.com/anamilanezi" class="contact-link"><i
                                 class="fa-brands fa-github-alt icon"></i></a>
@@ -40,16 +38,16 @@
                                 class="fa-solid fa-envelope icon"></i></a>
                     </div>
                 </div>
-            </div>
-        </div>
+            </header>
+        </nav>
 
 
-        <div class="col" id="gallery-col">
+        <main class="col page-gallery">
             <h2>Newbie</h2>
             <hr>
             <div class="row row-cols-1 row-cols-md-2 g-4">
                 <!-- Card -->
-                <div class="col text-center">
+                <section class="col text-center">
                     <div class="card h-100">
                         <img src="portfolio-page/images/qr-code-miniature.jpg" class="card-img-top preview-img"
                             alt="QR-Code page preview">
@@ -66,10 +64,10 @@
                                 target="_blank" class="btn btn-sm">Preview</a>
                         </div>
                     </div>
-                </div>
+                </section>
                 <!-- End of card -->
 
-                <div class="col text-center">
+                <section class="col text-center">
                     <div class="card h-100">
                         <img src="portfolio-page/images/product-miniature.jpg" class="card-img-top preview-img"
                             alt="Product page preview">
@@ -88,9 +86,9 @@
                                 target="_blank" class="btn btn-sm">Preview</a>
                         </div>
                     </div>
-                </div>
+                </section>
 
-                <div class="col text-center">
+                <section class="col text-center">
                     <div class="card h-100">
                         <img src="portfolio-page/images/3-column-miniature.jpg" class="card-img-top preview-img"
                             alt="3 column page preview">
@@ -98,7 +96,7 @@
                             <h5 class="card-title project-title">3-column</h5>
                             <p class="card-text project-info">This page presents three cards aligned in columns on
                                 large
-                                screens that turn into on mobile phones.</p>
+                                screens that turn into on mobile phones. HTML and CSS only.</p>
                         </div>
                         <div class="card-footer text-center">
                             <a role="button"
@@ -109,9 +107,9 @@
                                 target="_blank" class="btn btn-sm">Preview</a>
                         </div>
                     </div>
-                </div>
+                </section>
 
-                <div class="col text-center">
+                <section class="col text-center">
                     <div class="card h-100">
                         <img src="portfolio-page/images/stats-miniature.jpg" class="card-img-top preview-img"
                             alt="Stats page preview">
@@ -129,7 +127,45 @@
                                 target="_blank" class="btn btn-sm">Preview</a>
                         </div>
                     </div>
-                </div>
+                </section>
+
+                <section class="col text-center">
+                    <div class="card h-100">
+                        <img src="portfolio-page/images/rating-miniature.jpg" class="card-img-top preview-img"
+                            alt="Stats page preview">
+                        <div class="card-body">
+                            <h5 class="card-title project-title">Interactive rating</h5>
+                            <p class="card-text project-info">Rating component allows the user to send a review and show a thank you message using HTML, CSS and Javascript.</p>
+                        </div>
+                        <div class="card-footer">
+                            <a role="button"
+                                href="https://github.com/anamilanezi/front-end-mentor/tree/main/interactive-rating"
+                                target="_blank" class="btn btn-sm">Code</a>
+                            <a role="button"
+                                href="https://anamilanezi.github.io/front-end-mentor/interactive-rating/index.html"
+                                target="_blank" class="btn btn-sm">Preview</a>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="col text-center">
+                    <div class="card h-100">
+                        <img src="portfolio-page/images/faq-miniature.jpg" class="card-img-top preview-img"
+                            alt="Stats page preview">
+                        <div class="card-body">
+                            <h5 class="card-title project-title">FAQ Accordion Card</h5>
+                            <p class="card-text project-info">Frequented Asked Questions page, using semantic HTML elements, and CSS and Javascript to allow only one active question.</p>
+                        </div>
+                        <div class="card-footer">
+                            <a role="button"
+                                href="https://github.com/anamilanezi/front-end-mentor/tree/main/faq-accordion"
+                                target="_blank" class="btn btn-sm">Code</a>
+                            <a role="button"
+                                href="https://anamilanezi.github.io/front-end-mentor/faq-accordion/index.html"
+                                target="_blank" class="btn btn-sm">Preview</a>
+                        </div>
+                    </div>
+                </section>
 
 
             </div>
@@ -137,14 +173,14 @@
             <hr>
             <div class="row row-cols-1 row-cols-md-2 g-4">
                 <!-- Card  -->
-                <div class="col text-center">
+                <section class="col text-center">
                     <div class="card h-100">
                         <img src="portfolio-page/images/clipboard-miniature.jpg" class="card-img-top preview-img"
                             alt="Clipboard page preview">
                         <div class="card-body">
                             <h5 class="card-title project-title">Clipboard Landing Page</h5>
                             <p class="card-text project-info">A page with multiple sections and positioning of elements,
-                                made mainly with Bootstrap 5.</p>
+                                made with HTML, CSS and Bootstrap 5.</p>
                         </div>
                         <div class="card-footer">
                             <a role="button"
@@ -155,15 +191,15 @@
                                 target="_blank" class="btn btn-sm">Preview</a>
                         </div>
                     </div>
-                </div>
+                </section>
                 <!-- End of card     -->
-                <div class="col text-center">
+                <section class="col text-center">
                     <div class="card h-100">
                         <img src="portfolio-page/images/fylo-miniature.jpg" class="card-img-top preview-img"
                             alt="Fylo page preview">
                         <div class="card-body">
                             <h5 class="card-title project-title">Fylo Landing Page</h5>
-                            <p class="card-text project-info">A page with multiple sections and curved background.</p>
+                            <p class="card-text project-info">A page with multiple sections and curved background using HTML, CSS and Bootstrap 5</p>
                         </div>
                         <div class="card-footer">
                             <a role="button"
@@ -174,13 +210,31 @@
                                 target="_blank" class="btn btn-sm">Preview</a>
                         </div>
                     </div>
-                </div>
+                </section>
 
+                <section class="col text-center">
+                    <div class="card h-100">
+                        <img src="portfolio-page/images/tip-miniature.jpg" class="card-img-top preview-img"
+                            alt="Fylo page preview">
+                        <div class="card-body">
+                            <h5 class="card-title project-title">Tip Calculator App</h5>
+                            <p class="card-text project-info">Tip calculator made with HTML, CSS and JavaScript with input validation.</p>
+                        </div>
+                        <div class="card-footer">
+                            <a role="button"
+                                href="https://github.com/anamilanezi/front-end-mentor/tree/main/tip-calculator-app"
+                                target="_blank" class="btn btn-sm">Code</a>
+                            <a role="button"
+                                href="https://anamilanezi.github.io/front-end-mentor/tip-calculator-app/index.html"
+                                target="_blank" class="btn btn-sm">Preview</a>
+                        </div>
+                    </div>
+                </section>
 
 
                 <!-- End of junior section  -->
             </div>
-        </div>
+        </main>
     </div>
 
 
