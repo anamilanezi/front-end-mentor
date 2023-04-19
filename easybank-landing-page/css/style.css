@@ -33,6 +33,7 @@ body {
     color: #777;
     box-sizing: border-box;
     font-size: 1.8rem;
+    overflow-x: hidden;
 }
 
 a {
@@ -81,18 +82,27 @@ a {
 /**** Header  *****/
 
 .header__container {
+    position: relative;
     background-color: var(--very-light-gray);
+    background-image: url('../images/bg-intro-desktop.svg');
+    background-size: 90%;
+    background-repeat: no-repeat;
+    background-position-x: 500%;
+    background-position-y: 55%;
+
     height: 74.5rem;
     
 }
 
 .header__nav {
+    position: relative;
     background-color: #fff;
     height: 8rem;
     
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 999;
 
 }
 
@@ -125,7 +135,37 @@ li a.header__nav-item:hover{
     border-image: var(--gradient) 1;
 }
 
+.header__heading-container {
+    display: flex;
+    align-items: center;
+}
 
+.heading-container {
+    position: relative;
+}
+
+
+
+/* .header__heading {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+.header__image {
+    position: relative;
+}
+
+.header__image img {
+    position: absolute;
+    top: -3rem;
+    right: -13rem;
+}
+
+.header__heading img {
+    max-width: 100%;
+} */
 
 /**** Main  *****/
 .main__container {
