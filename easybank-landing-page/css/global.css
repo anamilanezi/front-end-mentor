@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap');
+
+:root {
+    --dark-blue: hsl(233, 26%, 24%);
+    --lime-green: hsl(136, 65%, 51%);
+    --green-cyan: hsl(160, 46%, 51%);
+    --bright-cyan: hsl(192, 70%, 51%);
+    --grayish-blue: hsl(233, 8%, 62%);
+    --light-grayish-blue: hsl(220, 14%, 96%);
+    --very-light-gray: hsl(0, 0%, 98%);
+    --gradient: linear-gradient(to right, var(--lime-green), var(--bright-cyan));
+    --gradient-hover: linear-gradient(to right, #83E49E, #81D5E0);
+    --dark-blue-opct: hsla(233, 26%, 24%, 0.2);
+    --shadow: linear-gradient(hsla(233, 26%, 24%, 0.8), hsla(255, 255%, 255%, 0.2));
+}
+
+
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    -webkit-font-smoothing: antialiased;
+    /* 10px = 1rem | 62.5%  of default 16px = 10px but allow user to increase*/
+}
+
+body {
+    font-family: 'Public Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #777;
+    box-sizing: border-box;
+    font-size: 1.8rem;
+    overflow-x: hidden;
+    letter-spacing: -0.07rem;
+
+}
+
+a:link, a:visited {
+    text-decoration: none !important;
+    color: var(--dark-blue)
+}
+
+a:hover {
+    color: var(--green-cyan);
+}
+
+h2 {
+    font-size: 4rem;
+}
+
+h3 {
+    font-size: 2.5rem;
+}
+
+h4 {
+    font-size: 2rem;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: var(--dark-blue);
+}
+
+p {
+    color: var(--grayish-blue);
+}
+
+.header__nav,
+.header__main,
+.main,
+.articles,
+.footer {
+    padding: 0rem 16.5rem;
+}
+
+.button:link,
+.button:visited {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: inherit;
+    font-size: 1.5rem;
+    color: #fff;
+    text-decoration: none;
+    background-image: var(--gradient);
+    border: none;
+    border-radius: 10rem;
+    transition: all .2s ease-out;
+    width: 18rem;
+    height: 4.4rem;
+}
+
+
+.button:hover {
+    background-image: var(--gradient-hover);
+    cursor: pointer;
+    transform: translateY(-0.3rem);
+    box-shadow: 0 1rem 2rem var(--dark-blue-opct);
+}
+
+.button:active {
+    transform: translateY(-0.1rem);
+    box-shadow: 0 0.5rem 1rem var(--dark-blue-opct);
+    background-image: var(--gradient);
+}
+
+.card {
+    border: none;
+    border-radius: 0.5rem;
+}

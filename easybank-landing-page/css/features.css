@@ -1,0 +1,41 @@
+
+.main {
+    background-color: var(--light-grayish-blue);
+    height: 67rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.main__title-main {
+
+    padding: 1rem 0;
+}
+
+.main__title-sub {
+    width: 50%;
+}
+
+.main__features {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main__features img {
+    width: 8rem;
+    padding-bottom: 3rem;
+}
+
+.features-card {
+    background-color: transparent;
+}
+
+.features-card.card-body {
+    padding: 0;
+}
+
+
+.features-description {
+    padding-top: 2rem;
+    font-size: 1.6rem;
+}

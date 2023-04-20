@@ -1,0 +1,39 @@
+.articles {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: var(--very-light-gray);
+
+}
+
+.articles__title {
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+}
+
+.articles__row {
+    padding-bottom: 6rem;
+}
+
+.articles__card {
+    margin: 1rem 0;
+}
+
+.articles__image {
+    border-radius: 0.5rem 0.5rem 0 0;
+    height: 20rem;
+    object-fit: cover;
+}
+
+
+.articles__body.card-body {
+    padding: 2rem 3rem 2rem 2rem;
+}
+
+.articles__card-author {
+    font-size: 1.2rem;
+}
+
+.articles__text {
+    font-size: 1.5rem;
+}
