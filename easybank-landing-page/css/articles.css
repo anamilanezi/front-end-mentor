@@ -25,6 +25,10 @@
     object-fit: cover;
 }
 
+.articles__image:hover {
+    opacity: 0.7;
+}
+
 
 .articles__body.card-body {
     padding: 2rem 3rem 2rem 2rem;

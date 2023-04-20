@@ -10,6 +10,7 @@
     height: 74.5rem;
 }
 
+/* Navbar */
 
 .header__nav {
     position: relative;
@@ -61,21 +62,22 @@ li a.header__nav-item:hover {
     border-image: var(--gradient) 1;
 }
 
+
+
+/* Main header */
+
 .header__main {
     height: 80%;
     display: flex;
     justify-content: space-between;
 }
 
-
-
 .header__title {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    animation: goLeft 0.8s ease-in;
 }
-
-
 
 .header__title-main {
     width: 70%;
@@ -83,6 +85,7 @@ li a.header__nav-item:hover {
     font-weight: 400;
     line-height: 6.5rem;
     padding-bottom: 3rem;
+
 }
 
 .header__title-sub {
@@ -97,4 +100,5 @@ li a.header__nav-item:hover {
     top: -12rem;
     right: calc(-9rem);
     object-fit: contain;
+    animation: goDown 0.8s ease-out;
 }

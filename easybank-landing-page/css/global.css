@@ -14,6 +14,47 @@
     --shadow: linear-gradient(hsla(233, 26%, 24%, 0.8), hsla(255, 255%, 255%, 0.2));
 }
 
+@keyframes goLeft {
+    0% {
+        opacity: 0;
+        transform: translate(100vh, 0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0, 0);
+
+    }
+}
+
+@keyframes goUp {
+
+    0% {
+        opacity: 0;
+        transform: translate(0, 100vh);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+    
+}
+
+@keyframes goDown {
+
+    0% {
+        opacity: 0;
+        transform: translate(0, -50vh);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+    
+}
+
 
 
 *,
