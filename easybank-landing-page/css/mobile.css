@@ -75,6 +75,7 @@
     .header__title {
         align-items: center;
         padding-bottom: 0;
+        
         /* text-align: center; */
     }
 
@@ -85,6 +86,9 @@
 
     .header__title-main {
         font-size: 3.5rem;
+        line-height: 4rem;
+        padding-top: 5rem;
+
         padding-bottom: 0;
         text-shadow: 2px 2px var(--light-grayish-blue);
 
@@ -169,9 +173,10 @@
     }
 
     .header__title {
-        margin-top: 40rem;
+        margin-top: 38rem;
         padding-bottom: 5rem;
         animation: goUp 0.8s ease-out;
+        
 
     }
 
