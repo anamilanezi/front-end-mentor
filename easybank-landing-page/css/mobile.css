@@ -171,6 +171,8 @@
     .header__title {
         margin-top: 40rem;
         padding-bottom: 5rem;
+        animation: goUp 0.8s ease-out;
+
     }
 
     .header__image-box {
@@ -183,6 +185,7 @@
         background-repeat: no-repeat;
         background-position-y: -100rem, -10rem, 0;
         transition: all 0.4s ease-out;
+        animation: goUp 0.8s ease-out;
     }
 
     .header__main.mobile.shadow {
