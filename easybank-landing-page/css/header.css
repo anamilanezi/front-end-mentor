@@ -4,8 +4,8 @@
     background-image: url('../images/bg-intro-desktop.svg');
     background-size: fill;
     background-repeat: no-repeat;
-    background-position-x: 60rem;
-    background-position-y: 55%;
+    background-position-x: 63rem;
+    background-position-y: 58%;
     background-color: var(--very-light-gray);
     height: 74.5rem;
 }
@@ -73,6 +73,7 @@ li a.header__nav-item:hover {
 }
 
 .header__title {
+    padding-top: 5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -80,11 +81,11 @@ li a.header__nav-item:hover {
 }
 
 .header__title-main {
-    width: 70%;
-    font-size: 5.2rem;
+    width: 72%;
+    font-size: 5.5rem;
     font-weight: 400;
     line-height: 6.5rem;
-    padding-bottom: 3rem;
+    padding-bottom: 2.5rem;
 
 }
 
