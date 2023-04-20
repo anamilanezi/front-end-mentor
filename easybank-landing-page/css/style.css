@@ -346,13 +346,17 @@ li a.header__nav-item:hover {
 
 .footer__link:link, 
 .footer__link:visited {
+    font-size: 1.9rem;
+    font-weight: 300;
     padding: 1rem;
     color: var(--very-light-gray);
 }
 
 
 .footer__link:hover {
+    
     color: var(--green-cyan);
+    
 }
 
 .footer__button {
