@@ -19,6 +19,10 @@
     margin: 1rem 0;
 }
 
+.articles__title {
+    font-size: 2rem;
+}
+
 .articles__image {
     border-radius: 0.5rem 0.5rem 0 0;
     height: 20rem;
