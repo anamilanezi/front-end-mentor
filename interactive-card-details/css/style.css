@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
+:root {
+    --grayish-violet: hsl(270, 3%, 87%);
+    --gray: hsl(279, 6%, 55%);
+    --violet: hsl(278, 68%, 11%);
+    --red: hsl(0, 100%, 66%);
+    --gradient: linear-gradient(to right, hsl(249, 99%, 64%), hsl(278, 94%, 30%));
+
+}
+
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%; /* 10px = 1rem | 62.5%  of default 16px = 10px but allow user to increase*/
+}
+
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    box-sizing: border-box;
+    font-weight: 500;
+}
+
+.container {
+    display: flex;
+    background-image: url('../images/bg-main-desktop.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100vh;
+}
+
+.ccard {
+    position: relative;
+}
+
+.front, 
+.back,
+.front::before,
+.back::before {
+    width: 44.7rem;
+    min-width: 35rem;
+    height: 24.5rem;
+    min-height: 19rem;
+    border-radius: 1rem;
+}
+
+.front__info-sub, 
+.back__code {
+    font-size: 1.4rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.front {
+    color: #fff;
+    background-image: url('../images/bg-card-front.png');
+    background-size: cover;
+    padding: 2.7rem 3.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    left: 16.4rem;
+    top: 18.7rem;
+}
+
+
+
+
+
+.front__deco {
+    display: flex;
+    align-items: center;
+}
+
+.front__deco-fill {
+    width: 4.7rem;
+    height: 4.7rem;
+    border-radius: 100rem;
+    background-color: #fff;
+}
+
+.front__deco-empty {
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 100rem;
+    background-color: transparent;
+    border: 1px solid #fff;;
+    margin-left: 1.6rem;
+}
+
+.front__info-num {
+    font-size: 2.8rem;
+    letter-spacing: 0.12em;
+}
+
+.front__info-sub {
+
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2.5rem;
+}
+
+
+.back {
+    color: var(--grayish-violet);
+    background-image: url('../images/bg-card-back.png');
+    background-size: contain;
+    background-color: transparent;
+    position: absolute;
+    bottom: 18.6rem;
+    left: 25.8rem;
+    /* box-shadow: 5rem 5rem 10rem hsla(279, 6%, 55%, 0.2); */
+}
+.front::before,
+.back::before {
+    content: "";
+    background-color: hsla(279, 6%, 55%, 0.1);
+    position: absolute;
+    bottom: 0rem;
+    left: 0rem;
+    box-shadow: 0rem 4rem 5rem hsla(279, 6%, 55%, 0.3);
+    z-index: -999;
+}
+
+
+
+.back__code {
+    position: absolute;
+    top: 11.1rem;
+    right: 6rem;
+    
+}
