@@ -1,5 +1,6 @@
 // https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_oninput
-
+const form = document.querySelector('.card__form')
+const confirmation = document.querySelector('.card__msg')
 
 const cardName = document.querySelector('.front__info-name');
 const formName = document.getElementById('form__name');
@@ -16,7 +17,7 @@ const formValYear = document.getElementById('form__year');
 const cardCvc = document.querySelector('.back__cvc')
 const formCvc = document.getElementById('form__cvc')
 
-const btn = document.querySelector('.btn')
+const btn = document.querySelector('.btn.confirm')
 
 const warningName = document.querySelector('.form__warning.name')
 const warningNum = document.querySelector('.form__warning.num')
@@ -117,7 +118,8 @@ btn.addEventListener('click', (e) => {
 
     validForm = validForm.every(element => element === true);
     if (validForm) {
-        alert("Thanks!")
+        addClass(form, 'submitted')
+        removeClass(confirmation, 'hidden')
     }
 
 });

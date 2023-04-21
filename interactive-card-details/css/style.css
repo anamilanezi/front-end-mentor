@@ -179,18 +179,21 @@ input, button {
 
 }
 
-.card__form {
+.card__form, .card__msg {
     border: none;
     background-color: #fff;
     width: 38.3rem;
     height: 35rem;
     display: flex;
     flex-direction: column;
+
+}
+
+.card__form {
     justify-content: space-between;
     margin-right: 15%;
     font-family: inherit;
 }
-
 
 input {
     margin-top: 0.5rem;
@@ -271,6 +274,31 @@ input:focus {
 input.error {
     outline: none !important;
     border: 0.2rem solid var(--red);
+}
+
+.card__form.submitted {
+    display: none;
+}
+
+.card__msg {
+    background-color: transparent;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.card__msg.hidden {
+    display: none;
+}
+
+.card__msg-title {
+    font-size: 3rem;
+    letter-spacing: 1rem;
+    text-transform: uppercase;
+}
+
+.card__msg-confirmation {
+    font-size: 1.8rem;
+    color: var(--gray);
 }
 
 @media screen and (max-width: 978px) {
