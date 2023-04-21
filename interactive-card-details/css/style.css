@@ -186,6 +186,7 @@ input, button {
     height: 35rem;
     display: flex;
     flex-direction: column;
+    opacity: 1;
 
 }
 
@@ -277,17 +278,24 @@ input.error {
 }
 
 .card__form.submitted {
+    /* animation: slideaway 200ms ease-in; */
+    transition: opacity 200ms, display 200ms;
     display: none;
+    opacity: 0;
 }
 
 .card__msg {
+    opacity: 1;
     background-color: transparent;
     align-items: center;
     justify-content: space-around;
 }
 
 .card__msg.hidden {
+    /* animation: slideaway 200ms ease-in; */
+    transition: opacity 200ms, display 200ms;
     display: none;
+    opacity: 0;
 }
 
 .card__msg-title {
@@ -329,6 +337,11 @@ input.error {
     }
 
 }
+
+@keyframes slideaway {
+    from { display: block; }
+    to { transform: translateY(40px); opacity: 0;}
+  }
 
 /* @media screen and (max-width: 375px) {
 
