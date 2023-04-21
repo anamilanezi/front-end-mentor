@@ -23,16 +23,23 @@ const warningNum = document.querySelector('.form__warning.num')
 const warningDate = document.querySelector('.form__warning.date')
 const warningCvc = document.querySelector('.form__warning.cvc')
 
+let validForm;
+
+// Card Name
 
 formName.addEventListener('input', () => {
+    addClass(warningName, 'hidden');
     let text = formName.value;
     cardName.textContent = text;
 })
 
 
-formNum.addEventListener('input', () => {
-    let num = formNum.value;
+// Card Num
 
+formNum.addEventListener('input', () => {
+    warningNum.textContent = "Wrong format, numbers only"
+    addClass(warningNum, 'hidden');
+    let num = formNum.value;
     let invalidNum = /^[0-9 ]+$/.test(num);
     if (!invalidNum) {
         addClass(formNum, 'error')
@@ -44,20 +51,27 @@ formNum.addEventListener('input', () => {
     }
 })
 
+// Date
+
 formValMonth.addEventListener('input', (e) => {
-    let month = formValMonth.value;
-  
+    addClass(warningDate, 'hidden');
+
+    let month = formValMonth.value;  
     cardValMonth.textContent = month;
 })
 
 formValYear.addEventListener('input', (e) => {
+    addClass(warningDate, 'hidden');
+
     let year = formValYear.value;
   
     cardValYear.textContent = year;
 })
 
+//  CVV
 
 formCvc.addEventListener('input', (e) => {
+    addClass(warningCvc, 'hidden');
     let text = formCvc.value;
 
     cardCvc.textContent = text;
@@ -66,41 +80,51 @@ formCvc.addEventListener('input', (e) => {
 
 
 btn.addEventListener('click', (e) => {
+    
+    validForm = [];
+    
     e.preventDefault()
 
     if (isEmpty(formName.value)) {
         removeClass(warningName, 'hidden');
+        validForm.push(false);
+    }
+
+    if (isEmpty(formNum.value)) {
+        warningNum.textContent = "Can't be empty"
+        removeClass(warningNum, 'hidden');
+        validForm.push(false);
     }
 
     if (isEmpty(formValMonth.value) || isEmpty(formValYear.value)) {
+        
         warningDate.textContent = "Can't be blank"
         removeClass(warningDate, 'hidden');
+        validForm.push(false);
     }
 
-    // if (invalidMonth(formValMonth.value) || invalidYear(formValYear.value)) {
-    //     warningDate.textContent = "Invalid date"
-    //     removeClass(warningDate, 'hidden')
-    // } else {
-    //     addClass(warningDate, 'hidden')
-    //     warningDate.textContent = "Can't be blank"
-    // }
+    if (invalidMonth(formValMonth.value) || invalidYear(formValYear.value)) {
+        console.log(invalidMonth(formValMonth.value),  invalidYear(formValYear.value))
+        warningDate.textContent = "Invalid date"
+        removeClass(warningDate, 'hidden')
+        validForm.push(false);
+    } 
 
     if (isEmpty(formCvc.value)) {
         removeClass(warningCvc, 'hidden')
+        validForm.push(false);
     }
+
+    validForm = validForm.every(element => element === true);
+    if (validForm) {
+        alert("Thanks!")
+    }
+
 });
 
 
 const isEmpty = (formValue) => {
-    
-    if (typeof(formValue) === 'string') {
-        
-        return formValue === ""
-    }
-
-    if (typeof(formValue) === 'number') {
-        return formValue === ""
-    }
+        return formValue == 0 || formValue == ""
 }
 
 const removeClass = (el, className) => {

@@ -90,7 +90,7 @@
 
             <label class="form__label" for="form__cvc">CVC
               <input class="form__cvc" id="form__cvc" name="form__cvc" type="number" 
-                aria-label="" placeholder="e.g. 123"/>
+                aria-label="" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="4" placeholder="e.g. 123"/>
             </label>
             <span class="form__warning cvc hidden">Can't be blank</span>
           </div>
