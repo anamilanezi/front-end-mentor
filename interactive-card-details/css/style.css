@@ -26,22 +26,25 @@ body {
     font-family: 'Space Grotesk', sans-serif;
     box-sizing: border-box;
     font-weight: 500;
+    overflow-x: hidden;
 }
 
 /* Credit Cards Images Column */
 .container {
     display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+.container__card {
+    width: 50%;
     background-image: url('../images/bg-main-desktop.png');
     background-repeat: no-repeat;
     background-size: contain;
-    height: 100vh;
-
-}
-
-.ccard {
-    position: relative;
-    left: 14rem;
-    /* transform: translateY(-50%); */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .front, 
@@ -49,24 +52,25 @@ body {
 .front::before,
 .back::before {
     width: 44.7rem;
-    min-width: 35rem;
     height: 24.5rem;
-    min-height: 19rem;
     border-radius: 1rem;
+    margin: 2rem 0;
 }
-
-
 
 .front {
     color: #fff;
     background-image: url('../images/bg-card-front.png');
-    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: contain;
     padding: 2.7rem 3.2rem;
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    position: absolute;
-    top: 10rem;
+    /* margin-left: 10%; */
+    align-self: center;
+    /* position: absolute;
+    top: 10rem; */
     /* z-index: 99; */
 }
 
@@ -75,17 +79,18 @@ body {
     background-image: url('../images/bg-card-back.png');
     background-size: contain;
     background-color: transparent;
-    position: absolute;
-    bottom: 15rem;
-    left: 8.7rem;
-    /* z-index: 3; */
+    background-repeat: no-repeat;
+    position: relative;
+    margin-left: 15%;
+    align-self: flex-end;
+
 }
+
 .front::before,
 .back::before {
     content: "";
-    background-color: hsla(279, 6%, 55%, 0.1);
     position: absolute;
-    bottom: 0rem;
+    bottom: -1.5rem;
     left: 0rem;
     box-shadow: 0rem 4rem 5rem hsla(279, 6%, 55%, 0.3);
     z-index: -999;
@@ -126,7 +131,6 @@ body {
 }
 
 .front__info-sub {
-
     display: flex;
     justify-content: space-between;
     margin-top: 2.5rem;
@@ -165,20 +169,26 @@ input, button {
     width: 100%;
 }
 
+.container__form {
+    width: 50%;
+    height: 100vh;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
 .card__form {
     border: none;
     background-color: #fff;
-    position: absolute;
-    right: 22.6rem;
-    top: 50%;
-    transform: translateY(-50%);
     width: 38.3rem;
     height: 35rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin-right: 15%;
     font-family: inherit;
-    z-index: 999;
 }
 
 
@@ -195,6 +205,10 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: var(--grayish-violet);
+    opacity: 1; /* Firefox */
+  }
 
 input:focus {
     outline: none;
@@ -260,17 +274,40 @@ input.error {
 }
 
 @media screen and (max-width: 978px) {
-    .ccard {
-        left:5rem;
+    .container {
+        flex-direction: column;
     }
+
+    .container__card {
+        width: 100%;
+        background-size: 100%;
+        background-position-y: 115%;
+        align-items: center;
+    }
+
+    .front, 
+    .back {
+        margin: 2rem 0;
+        align-self: center;
+    }
+
+    .container__form {
+        width: 100%;
+        height: fit-content;
+    }
+
+    .card__form {
+        margin: 5rem auto;
+    }
+
 }
 
-@media screen and (max-width: 500px) {
-    .container {
+/* @media screen and (max-width: 375px) {
+
+    .container__card {
+        width: 100%;
         background-size: 100%;
-    }
-    .ccard {
-        left:1rem;
+
     }
     .front {
         z-index: 2;
@@ -286,4 +323,4 @@ input.error {
         transform: translateX(-50%);
     }
 
-}
+} */

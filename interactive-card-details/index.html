@@ -24,28 +24,27 @@
 
   <main class="container">
 
-    <section class="ccard">
+    <section class="container__card">
       
-      <figure class="front">
 
-        <div class="front__deco">
-          <div class="front__deco-fill"></div>
-          <div class="front__deco-empty"></div>
-        </div>
-
-        <div class="front__info">
-          <span class="front__info-num">0000 0000 0000 0000</span>
-          <div class="front__info-sub">
-            <span class="front__info-name">Jane Appleseed</span>
-            <span class="front__info-val">
-              <span class="front__info-mm">00</span>
-              <span>/</span>
-              <span class="front__info-yy">00</span>
-            </span>
+        <figure class="front">
+          <div class="front__deco">
+            <div class="front__deco-fill"></div>
+            <div class="front__deco-empty"></div>
           </div>
-        </div>
+          <div class="front__info">
+            <span class="front__info-num">0000 0000 0000 0000</span>
+            <div class="front__info-sub">
+              <span class="front__info-name">Jane Appleseed</span>
+              <span class="front__info-val">
+                <span class="front__info-mm">00</span>
+                <span>/</span>
+                <span class="front__info-yy">00</span>
+              </span>
+            </div>
+          </div>
+        </figure>
 
-      </figure>
 
       <figure class="back">
         <span class="back__cvc">000</span>
@@ -53,7 +52,7 @@
 
     </section>
 
-    <section class="form " action="">
+    <section class="container__form" action="">
 
       <form class="card__form">
 
@@ -65,7 +64,7 @@
 
         <div class="form__col">
           <label class="form__label" for="form__num">Card number
-            <input id="form__num" class="" name="form__num" type="text" maxlength="19" aria-label="" />
+            <input id="form__num" class="" name="form__num" type="text" maxlength="19" aria-label="" placeholder="e.g. 1234 5678 9123 0000"/>
           </label>
           <span class="form__warning num hidden">Wrong format, numbers only</span>
         </div>
@@ -76,10 +75,10 @@
             <label class="form__label" for="form__col">Exp date (MM/YY)
               <input class="form__date" id="form__month" name="form__month" type="number"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
               type = "number"
-              maxlength = "2" />
+              maxlength = "2" placeholder="MM" />
               <input class="form__date" id="form__year" name="form__year" type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
               type = "number"
-              maxlength = "2" /> 
+              maxlength = "2" placeholder="YY" /> 
             </label>
             <span class="form__warning date hidden">Can't be blank</span>
           </div>
@@ -90,8 +89,8 @@
 
 
             <label class="form__label" for="form__cvc">CVC
-              <input class="form__cvc" id="form__cvc" name="form__cvc" type="number"
-                aria-label="" />
+              <input class="form__cvc" id="form__cvc" name="form__cvc" type="number" 
+                aria-label="" placeholder="e.g. 123"/>
             </label>
             <span class="form__warning cvc hidden">Can't be blank</span>
           </div>
