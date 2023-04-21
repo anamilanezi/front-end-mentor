@@ -28,6 +28,7 @@ body {
     font-weight: 500;
 }
 
+/* Credit Cards Images Column */
 .container {
     display: flex;
     background-image: url('../images/bg-main-desktop.png');
@@ -130,11 +131,93 @@ body {
     z-index: -999;
 }
 
-
-
-.back__code {
+.back__cvc {
     position: absolute;
     top: 11.1rem;
-    right: 6rem;
-    
+    right: 6rem;  
+}
+
+
+/* Form Column */
+
+
+fieldset {
+    border: none;
+}
+
+label, input, button {
+    font-family: inherit;
+    display: block;
+
+}
+
+label {
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    letter-spacing: 0.18em;
+}
+
+input, button {
+    font-size: 1.8rem;
+    border-radius: 0.5rem;
+    width: 100%;
+}
+
+input {
+    margin-top: 1.4rem;
+    border: 2px solid var(--grayish-violet);   
+    padding: 1rem 1.6rem;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+
+input:focus {
+    outline: none;
+    border-image-source: var(--gradient);
+    border-width: 2px;
+    border-image-slice: 1;
+    border-radius: 0.5rem;    
+}
+
+.card__form {
+    position: absolute;
+    right: 22.6rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 38.3rem;
+    height: 35rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: inherit;
+}
+
+.form__warning {
+    color: var(--red);
+    display: block;
+}
+
+
+.form__row {
+    display: flex;
+}
+
+.form__date {
+    width: 8rem;
+    display: inline;
+}
+
+.btn {
+    color: white;
+
+    background-color: var(--violet);
+    border: none;
+    padding: 1.5rem;
+
 }

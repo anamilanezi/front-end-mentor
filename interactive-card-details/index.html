@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!__ displays site properly based on user's device __>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!__ displays site properly based on user's device __>
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 
-  <!__ Font Awesome __>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!__ Font Awesome __>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <link rel="stylesheet" href="css/style.css">
-  <title>Frontend Mentor | Interactive card details form</title>
+      <link rel="stylesheet" href="css/style.css">
+      <title>Frontend Mentor | Interactive card details form</title>
 
-  <!__ Feel free to remove these styles or customise in your own stylesheet 👍 __>
+      <!__ Feel free to remove these styles or customise in your own stylesheet 👍 __>
 
 </head>
+
 <body>
 
   <main class="container">
@@ -27,7 +32,7 @@
           <div class="front__deco-empty"></div>
         </div>
         <div class="front__info">
-          
+
           <span class="front__info-num">0000 0000 0000 0000</span>
           <div class="front__info-sub">
             <span class="front__info-name">Jane Appleseed</span>
@@ -36,12 +41,49 @@
         </div>
       </figure>
       <figure class="back">
-        <span class="back__code">000</span>
+        <span class="back__cvc">000</span>
       </figure>
 
     </section>
 
-    <form class="form" action="">
+    <form action="">
+      <fieldset class="card__form">
+        <label for="form__name">Cardholder name
+          <input class="form__name" id="form__name" name="form__name" type="text" placeholder="e.g. Jane Appleseed"
+            required />
+
+        </label>
+        <label for="form__num">Card number
+          <input id="form__num" name="form__num" type="text" required />
+        </label>
+        <span class="form__warning">Wrong format, numbers only</span>
+
+        <div class="form__row">
+
+          <div class="form__col">
+            <label class="form__label" for="form__col">Exp date (MM/YY)
+              <input class="form__date" id="form__month" name="form__month" type="number" required />
+              <input class="form__date" id="form__year" name="form__year" type="number" required />
+            </label>
+            <span class="form__warning">Can't be blank</span>
+          </div>
+
+
+
+<div class="form__col">
+  
+  
+            <label class="form__label" for="form__cvc">CVC
+              <input id="form__cvc" name="form__cvc" type="password" pattern="/^[0-9]{3,4}$/" required />
+            </label>
+            <span class="form__warning">Can't be blank</span>
+</div>
+
+
+        </div>
+
+        <button class="btn" type="submit">Confirm</button>
+      </fieldset>
 
     </form>
   </main>
@@ -80,4 +122,5 @@ __>
     Coded by <a href="#">Your Name Here</a>. 
   </div> -->
 </body>
+
 </html>
