@@ -35,10 +35,13 @@ body {
     background-repeat: no-repeat;
     background-size: contain;
     height: 100vh;
+
 }
 
 .ccard {
     position: relative;
+    left: 14rem;
+    /* transform: translateY(-50%); */
 }
 
 .front, 
@@ -52,12 +55,7 @@ body {
     border-radius: 1rem;
 }
 
-.front__info-sub, 
-.back__cvc {
-    font-size: 1.4rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-}
+
 
 .front {
     color: #fff;
@@ -68,13 +66,38 @@ body {
     flex-direction: column;
     justify-content: space-between;
     position: absolute;
-    left: 16.4rem;
-    top: 18.7rem;
+    top: 10rem;
+    /* z-index: 99; */
+}
+
+.back {
+    color: var(--grayish-violet);
+    background-image: url('../images/bg-card-back.png');
+    background-size: contain;
+    background-color: transparent;
+    position: absolute;
+    bottom: 15rem;
+    left: 8.7rem;
+    /* z-index: 3; */
+}
+.front::before,
+.back::before {
+    content: "";
+    background-color: hsla(279, 6%, 55%, 0.1);
+    position: absolute;
+    bottom: 0rem;
+    left: 0rem;
+    box-shadow: 0rem 4rem 5rem hsla(279, 6%, 55%, 0.3);
+    z-index: -999;
 }
 
 
-
-
+.front__info-sub, 
+.back__cvc {
+    font-size: 1.4rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
 
 .front__deco {
     display: flex;
@@ -113,26 +136,6 @@ body {
     letter-spacing: 0;
 }
 
-.back {
-    color: var(--grayish-violet);
-    background-image: url('../images/bg-card-back.png');
-    background-size: contain;
-    background-color: transparent;
-    position: absolute;
-    bottom: 18.6rem;
-    left: 25.8rem;
-    /* box-shadow: 5rem 5rem 10rem hsla(279, 6%, 55%, 0.2); */
-}
-.front::before,
-.back::before {
-    content: "";
-    background-color: hsla(279, 6%, 55%, 0.1);
-    position: absolute;
-    bottom: 0rem;
-    left: 0rem;
-    box-shadow: 0rem 4rem 5rem hsla(279, 6%, 55%, 0.3);
-    z-index: -999;
-}
 
 .back__cvc {
     position: absolute;
@@ -175,6 +178,7 @@ input, button {
     flex-direction: column;
     justify-content: space-between;
     font-family: inherit;
+    z-index: 999;
 }
 
 
@@ -253,4 +257,33 @@ input:focus {
 input.error {
     outline: none !important;
     border: 0.2rem solid var(--red);
+}
+
+@media screen and (max-width: 978px) {
+    .ccard {
+        left:5rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .container {
+        background-size: 100%;
+    }
+    .ccard {
+        left:1rem;
+    }
+    .front {
+        z-index: 2;
+    }
+
+    .back, .back::before {
+        top: 5rem; 
+        left:3rem;
+    }
+
+    .card__form {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
 }

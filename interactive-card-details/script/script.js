@@ -40,7 +40,7 @@ formNum.addEventListener('input', () => {
     } else {
         removeClass(formNum, 'error')
         addClass(warningNum, 'hidden')
-        cardValMonth.textContent = num;
+        cardNum.textContent = num;
     }
 })
 
@@ -48,6 +48,12 @@ formValMonth.addEventListener('input', (e) => {
     let month = formValMonth.value;
   
     cardValMonth.textContent = month;
+})
+
+formValYear.addEventListener('input', (e) => {
+    let year = formValYear.value;
+  
+    cardValYear.textContent = year;
 })
 
 
@@ -67,13 +73,17 @@ btn.addEventListener('click', (e) => {
     }
 
     if (isEmpty(formValMonth.value) || isEmpty(formValYear.value)) {
+        warningDate.textContent = "Can't be blank"
         removeClass(warningDate, 'hidden');
     }
 
-    if (invalidMonth(formValMonth.value) || invalidYear(formValYear.value)) {
-        warningDate.textContent = "Invalid date"
-        removeClass(warningDate, 'hidden')
-    }
+    // if (invalidMonth(formValMonth.value) || invalidYear(formValYear.value)) {
+    //     warningDate.textContent = "Invalid date"
+    //     removeClass(warningDate, 'hidden')
+    // } else {
+    //     addClass(warningDate, 'hidden')
+    //     warningDate.textContent = "Can't be blank"
+    // }
 
     if (isEmpty(formCvc.value)) {
         removeClass(warningCvc, 'hidden')
@@ -91,13 +101,11 @@ const isEmpty = (formValue) => {
     if (typeof(formValue) === 'number') {
         return formValue === ""
     }
-
 }
 
 const removeClass = (el, className) => {
     el.classList.remove(className)
 }
-
 
 const addClass = (el, className) => {
     el.classList.add(className)
@@ -112,9 +120,5 @@ const invalidYear = (year) => {
     let currentYear = new Date().getFullYear() 
     // Getting only two digits:
     currentYear = currentYear.toString().slice(2)
-    
     return parseInt(year) < parseInt(currentYear)
 }
-// const invalidYear = (year) => {
-//     return
-// }
