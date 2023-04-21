@@ -7,7 +7,9 @@ const formName = document.getElementById('form__name');
 const cardNum = document.querySelector('.front__info-num');
 const formNum = document.getElementById("form__num");
 
-const cardVal = document.querySelector('.front__info-val')
+const cardValMonth = document.querySelector('.front__info-mm')
+const cardValYear = document.querySelector('.front__info-yy')
+
 const formValMonth = document.getElementById('form__month');
 const formValYear = document.getElementById('form__year');
 
@@ -29,36 +31,90 @@ formName.addEventListener('input', () => {
 
 
 formNum.addEventListener('input', () => {
-    let text = formNum.value;
+    let num = formNum.value;
 
-    let isNum = /^[0-9 ]+$/.test(text);
-    if (!isNum) {
-        formNum.classList.add('error')
-        warningNum.classList.remove('hidden')
+    let invalidNum = /^[0-9 ]+$/.test(num);
+    if (!invalidNum) {
+        addClass(formNum, 'error')
+        removeClass(warningNum, 'hidden')
     } else {
-        formNum.classList.remove('error')
-        warningNum.classList.add('hidden')
-        cardNum.textContent = text
+        removeClass(formNum, 'error')
+        addClass(warningNum, 'hidden')
+        cardValMonth.textContent = num;
     }
+})
+
+formValMonth.addEventListener('input', (e) => {
+    let month = formValMonth.value;
+  
+    cardValMonth.textContent = month;
+})
+
+
+formCvc.addEventListener('input', (e) => {
+    let text = formCvc.value;
+
+    cardCvc.textContent = text;
 })
 
 
 
+btn.addEventListener('click', (e) => {
+    e.preventDefault()
 
-btn.addEventListener('click', () => {
-    if (isEmpty(formValMonth.value) || isEmpty(formValYear.value) || isEmpty(formName.value)) {
-        warningDate.classList.remove('hidden');
+    if (isEmpty(formName.value)) {
+        removeClass(warningName, 'hidden');
+    }
+
+    if (isEmpty(formValMonth.value) || isEmpty(formValYear.value)) {
+        removeClass(warningDate, 'hidden');
+    }
+
+    if (invalidMonth(formValMonth.value) || invalidYear(formValYear.value)) {
+        warningDate.textContent = "Invalid date"
+        removeClass(warningDate, 'hidden')
+    }
+
+    if (isEmpty(formCvc.value)) {
+        removeClass(warningCvc, 'hidden')
     }
 });
 
 
 const isEmpty = (formValue) => {
-    if (typeof(formValue) === string) {
+    
+    if (typeof(formValue) === 'string') {
+        
         return formValue === ""
     }
 
-    if (typeof(formValue) === number) {
+    if (typeof(formValue) === 'number') {
         return formValue === ""
     }
 
 }
+
+const removeClass = (el, className) => {
+    el.classList.remove(className)
+}
+
+
+const addClass = (el, className) => {
+    el.classList.add(className)
+}
+
+
+const invalidMonth = (month) => {
+    return parseInt(month) < 1 || parseInt(month) > 12
+}
+
+const invalidYear = (year) => {
+    let currentYear = new Date().getFullYear() 
+    // Getting only two digits:
+    currentYear = currentYear.toString().slice(2)
+    
+    return parseInt(year) < parseInt(currentYear)
+}
+// const invalidYear = (year) => {
+//     return
+// }
