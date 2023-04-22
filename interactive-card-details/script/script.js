@@ -38,34 +38,63 @@ formName.addEventListener('input', () => {
 // Card Num
 
 formNum.addEventListener('input', () => {
-    warningNum.textContent = "Wrong format, numbers only"
+    // Hide warning and reset to default value 
     addClass(warningNum, 'hidden');
+    setTimeout(() => {
+        warningNum.textContent = "Wrong format, numbers only"
+    }, 200)
+
     let num = formNum.value;
-    let invalidNum = /^[0-9 ]+$/.test(num);
-    if (!invalidNum) {
+
+    // Test if user enters only number and spaces
+    let validNum = /^[0-9 ]+$/.test(num);
+
+    if (!validNum) {
         addClass(formNum, 'error')
         removeClass(warningNum, 'hidden')
+
     } else {
         removeClass(formNum, 'error')
         addClass(warningNum, 'hidden')
+
         cardNum.textContent = num;
+
+        // Change brand 
+        switch (cardNum.textContent[0]) {
+            case "3":
+                if (cardNum.textContent[1] == 4 || cardNum.textContent[1] == 7) { 
+                    setBrand('amex')
+                }
+                break;
+            case "4":
+                setBrand('visa')
+                break;
+            case "5":
+                setBrand('mastercard')
+                break;
+            case "6":
+                setBrand('discover')
+                break;
+            default:
+                console.log("Brand not found")
+                break;
+        }
+
     }
 })
+
 
 // Date
 
 formValMonth.addEventListener('input', (e) => {
     addClass(warningDate, 'hidden');
-
-    let month = formValMonth.value;  
+    let month = formValMonth.value;
     cardValMonth.textContent = month;
 })
 
 formValYear.addEventListener('input', (e) => {
     addClass(warningDate, 'hidden');
-
     let year = formValYear.value;
-  
     cardValYear.textContent = year;
 })
 
@@ -81,38 +110,53 @@ formCvc.addEventListener('input', (e) => {
 
 
 btn.addEventListener('click', (e) => {
-    
+
     validForm = [];
-    
+
     e.preventDefault()
 
     if (isEmpty(formName.value)) {
-        removeClass(warningName, 'hidden');
+        formError(formName, warningName)
         validForm.push(false);
     }
 
     if (isEmpty(formNum.value)) {
         warningNum.textContent = "Can't be empty"
-        removeClass(warningNum, 'hidden');
+        formError(formNum, warningNum)
         validForm.push(false);
     }
 
     if (isEmpty(formValMonth.value) || isEmpty(formValYear.value)) {
-        
         warningDate.textContent = "Can't be blank"
-        removeClass(warningDate, 'hidden');
         validForm.push(false);
+
+        if (isEmpty(formValMonth.value)) {
+            formError(formValMonth, warningDate)
+        }
+
+        if (isEmpty(formValYear.value)) {
+            formError(formValYear, warningDate)
+
+        }
     }
 
     if (invalidMonth(formValMonth.value) || invalidYear(formValYear.value)) {
-        console.log(invalidMonth(formValMonth.value),  invalidYear(formValYear.value))
         warningDate.textContent = "Invalid date"
-        removeClass(warningDate, 'hidden')
+        // dateError()
         validForm.push(false);
-    } 
+        if (invalidMonth(formValMonth.value)) {
+            formError(formValMonth, warningDate)
+        }
+
+        if (invalidYear(formValYear.value)) {
+            formError(formValYear, warningDate)
+
+        }
+    }
 
     if (isEmpty(formCvc.value)) {
-        removeClass(warningCvc, 'hidden')
+        formError(formCvc, warningCvc)
+
         validForm.push(false);
     }
 
@@ -126,7 +170,18 @@ btn.addEventListener('click', (e) => {
 
 
 const isEmpty = (formValue) => {
-        return formValue == 0 || formValue == ""
+    return formValue == 0 || formValue == ""
+}
+
+const invalidMonth = (month) => {
+    return parseInt(month) < 1 || parseInt(month) > 12
+}
+
+const invalidYear = (year) => {
+    let currentYear = new Date().getFullYear()
+    // Getting only two digits:
+    currentYear = currentYear.toString().slice(2)
+    return parseInt(year) < parseInt(currentYear)
 }
 
 const removeClass = (el, className) => {
@@ -137,14 +192,21 @@ const addClass = (el, className) => {
     el.classList.add(className)
 }
 
-
-const invalidMonth = (month) => {
-    return parseInt(month) < 1 || parseInt(month) > 12
+const formError = (field, msg) => {
+    addClass(field, 'error')
+    removeClass(msg, 'hidden');
 }
 
-const invalidYear = (year) => {
-    let currentYear = new Date().getFullYear() 
-    // Getting only two digits:
-    currentYear = currentYear.toString().slice(2)
-    return parseInt(year) < parseInt(currentYear)
+
+const setBrand = (brandName) => {
+
+    let brandClassList = document.querySelector('.fa-brands').classList
+
+    // Delete second class if existent
+    if (brandClassList.length === 2) {
+        brandClassList.remove(brandClassList[1])
+    }
+
+    // Change to brand 
+    brandClassList.add(`fa-cc-${brandName}`)
 }

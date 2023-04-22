@@ -22,6 +22,7 @@
     --gray: hsl(279, 6%, 55%);
     --violet: hsl(278, 68%, 11%);
     --red: hsl(0, 100%, 66%);
+    --purple: hsl(249, 99%, 64%);
     --gradient: linear-gradient(to right, hsl(249, 99%, 64%), hsl(278, 94%, 30%));
 
 }
@@ -87,7 +88,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-self: start;
-    animation: goLeft .8s ease-in;
+    /* animation: goLeft .8s ease-in; */
 
 
 }
@@ -100,9 +101,9 @@ body {
     background-repeat: no-repeat;
     position: relative;
     align-self: flex-end;
-    animation: goLeft .8s ease-in;
+    /* animation: goLeft .8s ease-in;
     animation-delay: .3s;
-    animation-fill-mode: backwards;
+    animation-fill-mode: backwards; */
 
 }
 
@@ -134,6 +135,20 @@ body {
     height: 4.7rem;
     border-radius: 100rem;
     background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fa-brands {
+    font-size: 2.5rem;
+    color: var(--purple);
+}
+
+.fa-brands.hidden {
+    opacity: 0;
+    font-size: 2.5rem;
+    color: var(--purple);
 }
 
 .front__deco-empty {
@@ -425,6 +440,10 @@ input.error {
         height: 3rem;
     }
 
+    .fa-brands {
+        font-size: 1.5rem;
+    }
+
     .front__deco-empty {
         width: 1.4rem;
         height: 1.4rem;
@@ -455,7 +474,7 @@ input.error {
 .container__form {
     place-items: center;
     height: fit-content;
-    padding-top: 3rem;
+    padding: 3rem 0;
 }
 
 .card__form, .card__msg {
@@ -468,7 +487,7 @@ input.error {
 
 .form__warning {
     margin-top: 0;
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
 }
 
 .form__row {
