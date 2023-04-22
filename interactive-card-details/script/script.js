@@ -143,14 +143,24 @@ formValYear.addEventListener('input', (e) => {
             formError(formValYear, warningDate)
         }
     }
-}
-)
+})
 
-document.querySelectorAll('.form__date').forEach(date => {
-    date.addEventListener('click', () => {
-        resetForm(date, warningDate)
+// formValMonth.addEventListener('click', () => {
+//     resetDate();
+
+// })
+
+// formValYear.addEventListener('click', () => {
+//     resetDate();
+// })
+
+document.querySelectorAll('.form__date').forEach(dateInput => {
+    dateInput.addEventListener('click', () => {
+        resetForm(formValMonth, warningDate)
+        resetForm(formValYear, warningDate)
     })
 })
+
 
 //  Update CVC 
 
@@ -177,6 +187,7 @@ btnConfirm.addEventListener('click', (e) => {
 
     // Check if any field is empty
     if (isEmpty(formName.value)) {
+        
         formError(formName, warningName)
         validForm.push(false);
     }
@@ -185,6 +196,13 @@ btnConfirm.addEventListener('click', (e) => {
         warningNum.textContent = "Can't be empty"
         formError(formNum, warningNum)
         validForm.push(false);
+    } else {
+
+        if (!validNum(formNum.value)) {
+            warningNum.textContent = "Plase check your number"
+            formError(formNum, warningNum)
+            validForm.push(false);
+        }
     }
 
     if (isEmpty(formValMonth.value) || isEmpty(formValYear.value)) {
@@ -199,6 +217,14 @@ btnConfirm.addEventListener('click', (e) => {
             formError(formValYear, warningDate)
 
         }
+    } else {
+        if (pastDate(formValMonth.value, formValYear.value)) {
+            validForm.push(false);
+
+            warningDate.textContent = "Can't be in the past"
+            formError(formValYear, warningDate)
+            addClass(formValMonth, 'error')
+        }
     }
 
     if (isEmpty(formCvc.value)) {
@@ -207,11 +233,6 @@ btnConfirm.addEventListener('click', (e) => {
         validForm.push(false);
     }
     
-    if (pastDate(formValMonth.value, formValYear.value)) {
-        warningDate.textContent = "Can't be in the past"
-        formError(formValYear, warningDate)
-        addClass(formValMonth, 'error')
-    }
 
     validForm = validForm.every(element => element === true);
     if (validForm) {
@@ -309,3 +330,6 @@ const testLength = (formInput) => {
     if (formInput.value.length > formInput.maxLength) formInput.value = formInput.value.slice(0, formInput.maxLength);
 } 
 
+const validNum = (numInput) => {
+    return (numInput.length >= 13 && numInput.length <= 19)
+}
