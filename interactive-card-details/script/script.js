@@ -31,11 +31,15 @@ let validForm;
 // CARDHOLDER NAME
 
 formName.addEventListener('input', () => {
-    addClass(warningName, 'hidden');
+    resetForm(formName, warningName)
+
     let text = formName.value;
     cardName.textContent = text;
 })
 
+formName.addEventListener('click', () => {
+    resetForm(formName, warningName)
+})
 
 // CARD NUMBER
 
@@ -45,59 +49,59 @@ formNum.addEventListener('input', () => {
 
     testLength(formNum)
     if (num === "") {
-        console.log(num)
         resetForm(formNum, warningNum)
         cardNum.textContent = "0000 0000 0000 0000"
     }
-    
+
 
     else {
 
         // Hide warning and reset to default value 
-    addClass(warningNum, 'hidden');
-    setTimeout(() => {
-        warningNum.textContent = "Wrong format, numbers only"
-    }, 200)
- // Test if user enters only number and spaces
- let validNum = /^[0-9 ]+$/.test(num);
+        addClass(warningNum, 'hidden');
+        setTimeout(() => {
+            warningNum.textContent = "Wrong format, numbers only"
+        }, 200)
+        // Test if user enters only number and spaces
+        let validNum = /^[0-9 ]+$/.test(num);
 
- if (!validNum) {
-     addClass(formNum, 'error')
-     removeClass(warningNum, 'hidden')
+        if (!validNum) {
+            addClass(formNum, 'error')
+            removeClass(warningNum, 'hidden')
 
- } else {
-     removeClass(formNum, 'error')
-     addClass(warningNum, 'hidden')
+        } else {
+            removeClass(formNum, 'error')
+            addClass(warningNum, 'hidden')
 
-     cardNum.textContent = num;
+            cardNum.textContent = num;
 
-     // Change brand 
-     switch (cardNum.textContent[0]) {
-         case "3":
-             if (cardNum.textContent[1] == 4 || cardNum.textContent[1] == 7) { 
-                 setBrand('amex')
-             }
-             break;
-         case "4":
-             setBrand('visa')
-             break;
-         case "5":
-             setBrand('mastercard')
-             break;
-         case "6":
-             setBrand('discover')
-             break;
-         default:
-             setBrand('')
-             break;
-     }
-
- }
+            // Change brand 
+            switch (cardNum.textContent[0]) {
+                case "3":
+                    if (cardNum.textContent[1] == 4 || cardNum.textContent[1] == 7) {
+                        setBrand('amex')
+                    }
+                    break;
+                case "4":
+                    setBrand('visa')
+                    break;
+                case "5":
+                    setBrand('mastercard')
+                    break;
+                case "6":
+                    setBrand('discover')
+                    break;
+                default:
+                    setBrand('')
+                    break;
+            }
+        }
     }
 
-   
 })
 
+formNum.addEventListener('click', () => {
+    resetForm(formNum, warningNum)
+})
 
 // DATE
 // Month
@@ -117,7 +121,7 @@ formValMonth.addEventListener('input', (e) => {
         formError(formValMonth, warningDate)
 
     }
-    }
+}
 )
 
 //Year
@@ -139,10 +143,16 @@ formValYear.addEventListener('input', (e) => {
             formError(formValYear, warningDate)
         }
     }
-    }
+}
 )
 
-//  CVV
+document.querySelectorAll('.form__date').forEach(date => {
+    date.addEventListener('click', () => {
+        resetForm(date, warningDate)
+    })
+})
+
+//  Update CVC 
 
 formCvc.addEventListener('input', (e) => {
     testLength(formCvc)
@@ -153,6 +163,9 @@ formCvc.addEventListener('input', (e) => {
     cardCvc.textContent = text;
 })
 
+formCvc.addEventListener('click', () => {
+    resetForm(formCvc, warningCvc)
+})
 
 // BUTTON SUBMIT
 
@@ -162,6 +175,7 @@ btnConfirm.addEventListener('click', (e) => {
 
     e.preventDefault()
 
+    // Check if any field is empty
     if (isEmpty(formName.value)) {
         formError(formName, warningName)
         validForm.push(false);
@@ -187,24 +201,16 @@ btnConfirm.addEventListener('click', (e) => {
         }
     }
 
-    if (invalidMonth(formValMonth.value) || invalidYear(formValYear.value)) {
-        warningDate.textContent = "Invalid date"
-        // dateError()
-        validForm.push(false);
-        if (invalidMonth(formValMonth.value)) {
-            formError(formValMonth, warningDate)
-        }
-
-        if (invalidYear(formValYear.value)) {
-            formError(formValYear, warningDate)
-
-        }
-    }
-
     if (isEmpty(formCvc.value)) {
         formError(formCvc, warningCvc)
 
         validForm.push(false);
+    }
+    
+    if (pastDate(formValMonth.value, formValYear.value)) {
+        warningDate.textContent = "Can't be in the past"
+        formError(formValYear, warningDate)
+        addClass(formValMonth, 'error')
     }
 
     validForm = validForm.every(element => element === true);
@@ -251,6 +257,21 @@ const invalidYear = (year) => {
     return parseInt(year) < parseInt(currentYear)
 }
 
+const pastDate = (month, year) => {
+
+    let today = new Date()
+    let currentMonth = today.getMonth() + 1;   // Month starts at 0 
+    let currentYear = today.getFullYear();
+
+    // Getting only two digits:
+    today = new Date(`${currentYear}-${currentMonth}`)
+    let userDate = new Date(parseInt(`20${year}`), parseInt(month))
+
+    
+    return (today > userDate)
+}
+
+
 const removeClass = (el, className) => {
     el.classList.remove(className)
 }
@@ -284,7 +305,7 @@ const setBrand = (brandName) => {
 }
 
 
-
 const testLength = (formInput) => {
     if (formInput.value.length > formInput.maxLength) formInput.value = formInput.value.slice(0, formInput.maxLength);
 } 
+
