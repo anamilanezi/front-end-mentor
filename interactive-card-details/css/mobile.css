@@ -68,7 +68,7 @@
 
     .front,
     .back,
-    .back::before {
+    .front::before {
         /* width: 35rem; */
         /* height: auto; */
         width: 28.5rem;
@@ -78,8 +78,10 @@
         margin: 0;
     }
 
-    .front::before {
-        display: none;
+ .front::before {
+    box-shadow: 0rem 2rem 2rem hsla(279, 6%, 55%, 0.3);
+    bottom: 0rem;
+    left: 0rem;
     }
 
  
@@ -89,7 +91,6 @@
         position: absolute;
         bottom: 5rem;
         left: 0rem;
-        box-shadow: 0rem 4rem 5rem hsla(279, 6%, 55%, 0.3);
         z-index: -999;
     } */
 

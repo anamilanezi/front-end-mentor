@@ -54,7 +54,7 @@
     content: "";
     position: absolute;
     bottom: -1.5rem;
-    left: 0rem;
+    left: -1rem;
     box-shadow: 0rem 4rem 5rem hsla(279, 6%, 55%, 0.3);
     z-index: -999;
 }
