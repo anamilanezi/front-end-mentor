@@ -41,51 +41,61 @@ formName.addEventListener('input', () => {
 
 formNum.addEventListener('input', () => {
 
-    testLength(formNum)
+    let num = formNum.value;
 
-    // Hide warning and reset to default value 
+    testLength(formNum)
+    if (num === "") {
+        console.log(num)
+        resetForm(formNum, warningNum)
+        cardNum.textContent = "0000 0000 0000 0000"
+    }
+    
+
+    else {
+
+        // Hide warning and reset to default value 
     addClass(warningNum, 'hidden');
     setTimeout(() => {
         warningNum.textContent = "Wrong format, numbers only"
     }, 200)
+ // Test if user enters only number and spaces
+ let validNum = /^[0-9 ]+$/.test(num);
 
-    let num = formNum.value;
+ if (!validNum) {
+     addClass(formNum, 'error')
+     removeClass(warningNum, 'hidden')
 
-    // Test if user enters only number and spaces
-    let validNum = /^[0-9 ]+$/.test(num);
+ } else {
+     removeClass(formNum, 'error')
+     addClass(warningNum, 'hidden')
 
-    if (!validNum) {
-        addClass(formNum, 'error')
-        removeClass(warningNum, 'hidden')
+     cardNum.textContent = num;
 
-    } else {
-        removeClass(formNum, 'error')
-        addClass(warningNum, 'hidden')
+     // Change brand 
+     switch (cardNum.textContent[0]) {
+         case "3":
+             if (cardNum.textContent[1] == 4 || cardNum.textContent[1] == 7) { 
+                 setBrand('amex')
+             }
+             break;
+         case "4":
+             setBrand('visa')
+             break;
+         case "5":
+             setBrand('mastercard')
+             break;
+         case "6":
+             setBrand('discover')
+             break;
+         default:
+             setBrand('')
+             break;
+     }
 
-        cardNum.textContent = num;
-
-        // Change brand 
-        switch (cardNum.textContent[0]) {
-            case "3":
-                if (cardNum.textContent[1] == 4 || cardNum.textContent[1] == 7) { 
-                    setBrand('amex')
-                }
-                break;
-            case "4":
-                setBrand('visa')
-                break;
-            case "5":
-                setBrand('mastercard')
-                break;
-            case "6":
-                setBrand('discover')
-                break;
-            default:
-                console.log("Brand not found")
-                break;
-        }
-
+ }
     }
+
+   
 })
 
 
@@ -265,7 +275,7 @@ const setBrand = (brandName) => {
     let brandClassList = document.querySelector('.fa-brands').classList
 
     // Delete second class if existent
-    if (brandClassList.length === 2) {
+    if (brandClassList.length > 1) {
         brandClassList.remove(brandClassList[1])
     }
 
