@@ -1,5 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
 
+@keyframes goLeft {
+    0% {
+        opacity: 0;
+        transform: translate(100vh, 0);
+    }
+
+    40% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+  }
+
+
 :root {
     --grayish-violet: hsl(270, 3%, 87%);
     --gray: hsl(279, 6%, 55%);
@@ -56,6 +73,7 @@ body {
     height: 24.5rem;
     border-radius: 1rem;
     margin: 2rem 0;
+
 }
 
 .front {
@@ -69,6 +87,8 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-self: start;
+    animation: goLeft .8s ease-in;
+
 
 }
 
@@ -79,8 +99,11 @@ body {
     background-color: transparent;
     background-repeat: no-repeat;
     position: relative;
-    /* margin-left: 15%; */
     align-self: flex-end;
+    animation: goLeft .8s ease-in;
+    animation-delay: .3s;
+    animation-fill-mode: backwards;
+
 }
 
 .front::before,
@@ -338,30 +361,56 @@ input.error {
 
 }
 
-@keyframes slideaway {
-    from { display: block; }
-    to { transform: translateY(40px); opacity: 0;}
-  }
 
-/* @media screen and (max-width: 375px) {
+
+@media screen and (max-width: 415px) {
 
     .container__card {
-        width: 100%;
-        background-size: 100%;
-
-    }
-    .front {
-        z-index: 2;
+        background-image: url('../images/bg-main-mobile.png');
+        background-size: contain;
     }
 
-    .back, .back::before {
-        top: 5rem; 
-        left:3rem;
+    .front,
+    .back,
+    .front::before,
+    .back::before {
+        /* width: 35rem; */
+        /* height: auto; */
+        width: 34.7rem;
+        height: 19rem;
     }
 
-    .card__form {
-        left: 50%;
-        transform: translateX(-50%);
+    .front::before,
+    .back::before {
+        content: "";
+        position: absolute;
+        bottom: 5rem;
+        left: 0rem;
+        box-shadow: 0rem 4rem 5rem hsla(279, 6%, 55%, 0.3);
+        z-index: -999;
     }
 
-} */
+    .front__info-num {
+        font-size: 1.8rem;
+        letter-spacing: 0.12em;
+    }
+
+
+.container__form {
+    place-items: center;
+
+}
+
+.card__form, .card__msg {
+    width: 32rem;
+}
+.form__row {
+    justify-content: left;
+}
+
+
+.form__cvc {
+    width: 100%;
+}
+
+}
