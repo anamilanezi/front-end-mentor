@@ -119,6 +119,7 @@ input:focus {
 
 .form__row {
     display: flex;
+    justify-content: space-between;
 }
 
 .form__date {
