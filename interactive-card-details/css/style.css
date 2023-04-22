@@ -173,10 +173,17 @@ input, button {
     width: 50%;
     height: 100vh;
     z-index: 999;
-    display: flex;
+    display: grid;
+    grid-template: 1fr / 1fr;
+    place-items: center;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
+}
 
+.container__form * {
+    grid-column: 1 / 1;
+    grid-row: 1 / 1;
 }
 
 .card__form, .card__msg {
@@ -187,13 +194,34 @@ input, button {
     display: flex;
     flex-direction: column;
     opacity: 1;
+    position: relative;
+    margin-right: 15%;
 
 }
 
 .card__form {
     justify-content: space-between;
-    margin-right: 15%;
     font-family: inherit;
+    z-index: 2;
+}
+
+.card__form.submitted {
+    /* animation: slideaway 200ms ease-in; */
+    transition: opacity 200ms, display 200ms;
+    opacity: 0;
+}
+
+.card__msg {
+    background-color: transparent;
+    align-items: center;
+    justify-content: space-around;
+    transition: opacity 200ms, display 200ms;
+    z-index: 1;   
+}
+
+.card__msg.hidden {
+    /* animation: slideaway 200ms ease-in; */
+    opacity: 0;
 }
 
 input {
@@ -238,13 +266,11 @@ input:focus {
 
 .btn {
     color: white;
-
     background-color: var(--violet);
     border: none;
     padding: 1.5rem;
     transition: all 0.1s ease-in;
 }
-
 
 
 .btn:hover {
@@ -256,9 +282,7 @@ input:focus {
 .btn:active {
     transform: translateY(-0.1rem);
     box-shadow: 0 0.3rem 0.5rem var(--grayish-violet);
-
 }
-
 
 .form__warning {
     color: var(--red);
@@ -275,27 +299,6 @@ input:focus {
 input.error {
     outline: none !important;
     border: 0.2rem solid var(--red);
-}
-
-.card__form.submitted {
-    /* animation: slideaway 200ms ease-in; */
-    transition: opacity 200ms, display 200ms;
-    display: none;
-    opacity: 0;
-}
-
-.card__msg {
-    opacity: 1;
-    background-color: transparent;
-    align-items: center;
-    justify-content: space-around;
-}
-
-.card__msg.hidden {
-    /* animation: slideaway 200ms ease-in; */
-    transition: opacity 200ms, display 200ms;
-    display: none;
-    opacity: 0;
 }
 
 .card__msg-title {
@@ -332,7 +335,7 @@ input.error {
         height: fit-content;
     }
 
-    .card__form {
+    .card__form, .card__msg {
         margin: 5rem auto;
     }
 
