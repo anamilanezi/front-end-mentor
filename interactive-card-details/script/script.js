@@ -87,21 +87,48 @@ formNum.addEventListener('input', () => {
 // Date
 
 formValMonth.addEventListener('input', (e) => {
-    addClass(warningDate, 'hidden');
+
+    if (!invalidYear(formValYear.value)) {
+        resetForm(formValMonth, warningDate)
+    }
+
     let month = formValMonth.value;
     cardValMonth.textContent = month;
-})
+
+
+    if (invalidMonth(formValMonth.value)) {
+        warningDate.textContent = "Invalid date"
+        formError(formValMonth, warningDate)
+
+    }
+    }
+)
 
 formValYear.addEventListener('input', (e) => {
-    addClass(warningDate, 'hidden');
+    if (!invalidMonth(formValMonth.value)) {
+        resetForm(formValYear, warningDate)
+
+    }
+
     let year = formValYear.value;
     cardValYear.textContent = year;
-})
+
+    if (year.length > 1) {
+        if (invalidYear(formValYear.value)) {
+            warningDate.textContent = "Invalid date"
+            formError(formValYear, warningDate)
+        }
+    }
+
+
+    }
+)
 
 //  CVV
 
 formCvc.addEventListener('input', (e) => {
-    addClass(warningCvc, 'hidden');
+    resetForm(formCvc, warningCvc)
+
     let text = formCvc.value;
 
     cardCvc.textContent = text;
@@ -195,6 +222,11 @@ const addClass = (el, className) => {
 const formError = (field, msg) => {
     addClass(field, 'error')
     removeClass(msg, 'hidden');
+}
+
+const resetForm = (field, msg) => {
+    removeClass(field, 'error')
+    addClass(msg, 'hidden');
 }
 
 
