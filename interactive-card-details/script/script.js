@@ -17,7 +17,8 @@ const formValYear = document.getElementById('form__year');
 const cardCvc = document.querySelector('.back__cvc')
 const formCvc = document.getElementById('form__cvc')
 
-const btn = document.querySelector('.btn.confirm')
+const btnConfirm = document.querySelector('.btn.confirm')
+const btnContinue = document.querySelector('.btn.continue')
 
 const warningName = document.querySelector('.form__warning.name')
 const warningNum = document.querySelector('.form__warning.num')
@@ -145,7 +146,7 @@ formCvc.addEventListener('input', (e) => {
 
 // BUTTON SUBMIT
 
-btn.addEventListener('click', (e) => {
+btnConfirm.addEventListener('click', (e) => {
 
     validForm = [];
 
@@ -198,12 +199,30 @@ btn.addEventListener('click', (e) => {
 
     validForm = validForm.every(element => element === true);
     if (validForm) {
+        // get values and do something
         addClass(form, 'submitted')
         removeClass(confirmation, 'hidden')
     }
 
 });
 
+// Reset form
+btnContinue.addEventListener('click', (e) => {
+    e.preventDefault()
+
+    document.querySelectorAll('input').forEach(field => {
+        field.value = ""
+    })
+
+    cardName.textContent = "Jane Appleseed"
+    cardNum.textContent = "0000 0000 0000 0000"
+    cardValMonth.textContent = "00"
+    cardValYear.textContent = "00"
+    cardCvc.textContent = "000"
+    removeClass(form, 'submitted')
+    addClass(confirmation, 'hidden')
+
+})
 
 // FUNCTIONS DEFINITION
 

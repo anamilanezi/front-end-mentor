@@ -30,9 +30,9 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+::placeholder { 
     color: var(--grayish-violet);
-    opacity: 1; /* Firefox */
+    opacity: 1; 
   }
 
 input:focus {
@@ -81,6 +81,8 @@ input:focus {
 
 .card__form.submitted {
     opacity: 0;
+    z-index: 1;
+
 }
 
 .card__msg {

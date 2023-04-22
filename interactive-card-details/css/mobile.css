@@ -1,10 +1,10 @@
-
 @media screen and (max-width: 1100px) {
     .container {
         flex-direction: column;
     }
 
-    .container__card, .container__form {
+    .container__card,
+    .container__form {
         padding: 0 10rem;
     }
 
@@ -15,7 +15,7 @@
         align-items: center;
     }
 
-    .front, 
+    .front,
     .back {
         margin: 2rem 0;
     }
@@ -27,7 +27,8 @@
         place-items: center;
     }
 
-    .card__form, .card__msg {
+    .card__form,
+    .card__msg {
         margin: 5rem auto;
     }
 
@@ -48,8 +49,8 @@
     }
 
     .container__card * {
-            grid-column: 1 / 1;
-            grid-row: 1 / 1;   
+        grid-column: 1 / 1;
+        grid-row: 1 / 1;
     }
 
     .front {
@@ -69,8 +70,6 @@
     .front,
     .back,
     .front::before {
-        /* width: 35rem; */
-        /* height: auto; */
         width: 28.5rem;
         height: 15.6rem;
         padding: 1.8rem 2rem;
@@ -78,21 +77,12 @@
         margin: 0;
     }
 
- .front::before {
-    box-shadow: 0rem 2rem 2rem hsla(279, 6%, 55%, 0.3);
-    bottom: 0rem;
-    left: 0rem;
+    .front::before {
+        box-shadow: 0rem 2rem 2rem hsla(279, 6%, 55%, 0.3);
+        bottom: 0rem;
+        left: 0rem;
     }
 
- 
-    /* .front::before,
-    .back::before {
-        content: "";
-        position: absolute;
-        bottom: 5rem;
-        left: 0rem;
-        z-index: -999;
-    } */
 
     .front__deco-fill {
         width: 3rem;
@@ -115,7 +105,8 @@
         letter-spacing: 0.12em;
     }
 
-    .front__info-sub, .back__cvc {
+    .front__info-sub,
+    .back__cvc {
         font-size: 1rem;
     }
 
@@ -130,32 +121,33 @@
         right: 3.5rem;
     }
 
-.container__form {
-    place-items: center;
-    height: fit-content;
-    padding: 3rem 0;
-}
+    .container__form {
+        place-items: center;
+        height: fit-content;
+        padding: 3rem 0;
+    }
 
-.card__form, .card__msg {
-    width: 32rem;
-}
+    .card__form,
+    .card__msg {
+        width: 32rem;
+    }
 
-.card__form {
-    justify-content: start;
-}
+    .card__form {
+        justify-content: start;
+    }
 
-.form__warning {
-    margin-top: 0;
-    margin-bottom: 1.2rem;
-}
+    .form__warning {
+        margin-top: 0;
+        margin-bottom: 1.2rem;
+    }
 
-.form__row {
-    justify-content: left;
-}
+    .form__row {
+        justify-content: left;
+    }
 
 
-.form__cvc {
-    width: 100%;
-}
+    .form__cvc {
+        width: 100%;
+    }
 
 }
