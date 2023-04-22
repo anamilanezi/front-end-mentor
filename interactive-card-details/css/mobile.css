@@ -1,0 +1,160 @@
+
+@media screen and (max-width: 1100px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .container__card, .container__form {
+        padding: 0 10rem;
+    }
+
+    .container__card {
+        width: 100%;
+        background-size: 100%;
+        background-position-y: 115%;
+        align-items: center;
+    }
+
+    .front, 
+    .back {
+        margin: 2rem 0;
+    }
+
+    .container__form {
+        width: 100%;
+        height: fit-content;
+        padding: 0;
+        place-items: center;
+    }
+
+    .card__form, .card__msg {
+        margin: 5rem auto;
+    }
+
+}
+
+
+
+@media screen and (max-width: 415px) {
+
+    .container__card {
+        background-image: url('../images/bg-main-mobile.png');
+        background-size: cover;
+        width: 100%;
+        display: grid;
+        grid-template: 1fr / 1fr;
+        place-items: center start;
+        padding: 3.5rem 1.5rem;
+    }
+
+    .container__card * {
+            grid-column: 1 / 1;
+            grid-row: 1 / 1;   
+    }
+
+    .front {
+        z-index: 2;
+        position: relative;
+        top: 50%;
+        object-fit: contain;
+    }
+
+    .back {
+        position: relative;
+        left: 15%;
+        bottom: 10%;
+        object-fit: contain;
+    }
+
+    .front,
+    .back,
+    .back::before {
+        /* width: 35rem; */
+        /* height: auto; */
+        width: 28.5rem;
+        height: 15.6rem;
+        padding: 1.8rem 2rem;
+        border-radius: 0.5rem;
+        margin: 0;
+    }
+
+    .front::before {
+        display: none;
+    }
+
+ 
+    /* .front::before,
+    .back::before {
+        content: "";
+        position: absolute;
+        bottom: 5rem;
+        left: 0rem;
+        box-shadow: 0rem 4rem 5rem hsla(279, 6%, 55%, 0.3);
+        z-index: -999;
+    } */
+
+    .front__deco-fill {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .fa-brands {
+        font-size: 1.5rem;
+    }
+
+    .front__deco-empty {
+        width: 1.4rem;
+        height: 1.4rem;
+        margin-left: 1rem;
+    }
+
+
+    .front__info-num {
+        font-size: 1.8rem;
+        letter-spacing: 0.12em;
+    }
+
+    .front__info-sub, .back__cvc {
+        font-size: 1rem;
+    }
+
+    .front__info-sub {
+
+        margin-top: .5rem;
+        letter-spacing: 0.9;
+    }
+
+    .back__cvc {
+        top: 7rem;
+        right: 3.5rem;
+    }
+
+.container__form {
+    place-items: center;
+    height: fit-content;
+    padding: 3rem 0;
+}
+
+.card__form, .card__msg {
+    width: 32rem;
+}
+
+.card__form {
+    justify-content: start;
+}
+
+.form__warning {
+    margin-top: 0;
+    margin-bottom: 1.2rem;
+}
+
+.form__row {
+    justify-content: left;
+}
+
+
+.form__cvc {
+    width: 100%;
+}
+
+}

@@ -1,0 +1,158 @@
+
+label, input, button {
+    font-family: inherit;
+    display: block;
+    
+}
+
+label {
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    letter-spacing: 0.18em;
+}
+
+input, button {
+    font-size: 1.8rem;
+    border-radius: 1rem;
+    width: 100%;
+}
+
+input {
+    margin-top: 0.5rem;
+    border: 2px solid var(--grayish-violet);   
+    padding: 1rem 1.6rem;
+    position: relative;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: var(--grayish-violet);
+    opacity: 1; /* Firefox */
+  }
+
+input:focus {
+    outline: none;
+    border-image-source: var(--gradient);
+    border-width: 1px;
+    border-image-slice: 1;
+    border-radius: 1rem;    
+}
+
+
+.container__form {
+    width: 50%;
+    height: 100vh;
+    z-index: 999;
+    display: grid;
+    grid-template: 1fr / 1fr;
+    place-items: center start;
+    padding-left: 10rem;
+    animation: reveal 1s ease-in;
+}
+
+.container__form * {
+    grid-column: 1 / 1;
+    grid-row: 1 / 1;
+}
+
+.card__form, .card__msg {
+    opacity: 1;
+    border: none;
+    background-color: #fff;
+    width: 38.3rem;
+    height: 35rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: opacity .8s ease-in;
+
+}
+
+.card__form {
+    justify-content: space-between;
+    font-family: inherit;
+    z-index: 2;
+}
+
+.card__form.submitted {
+    opacity: 0;
+}
+
+.card__msg {
+    background-color: transparent;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 1;   
+}
+
+.card__msg.hidden {
+    opacity: 0;
+}
+
+
+.form__row {
+    display: flex;
+}
+
+.form__date {
+    width: 8rem;
+    display: inline;
+}
+
+.form__cvc {
+    width: 20rem;;
+}
+
+.btn {
+    color: white;
+    background-color: var(--violet);
+    border: none;
+    padding: 1.5rem;
+    transition: all 0.1s ease-in;
+}
+
+
+.btn:hover {
+    cursor: pointer;
+    transform: translateY(-0.3rem);
+    box-shadow: 0 1rem 1.5rem var(--grayish-violet);
+}
+
+.btn:active {
+    transform: translateY(-0.1rem);
+    box-shadow: 0 0.3rem 0.5rem var(--grayish-violet);
+}
+
+.form__warning {
+    color: var(--red);
+    display: block;
+    margin-top: 0.9rem;
+    margin-bottom: 1.7rem;
+    font-size: 1.2rem;
+    transition: opacity .2s ease-in;
+}
+
+.form__warning.hidden {
+    opacity: 0;
+}
+
+input.error {
+    outline: none !important;
+    border: 0.2rem solid var(--red);
+}
+
+.card__msg-title {
+    font-size: 3rem;
+    letter-spacing: 1rem;
+    text-transform: uppercase;
+}
+
+.card__msg-confirmation {
+    font-size: 1.8rem;
+    color: var(--gray);
+}

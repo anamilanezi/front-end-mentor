@@ -1,0 +1,125 @@
+
+.container__card {
+    width: 50%;
+    background-image: url('../images/bg-main-desktop.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 16rem;
+}
+
+.front, 
+.back,
+.front::before,
+.back::before {
+    width: 44.7rem;
+    height: 24.5rem;
+    border-radius: 1rem;
+    margin: 2rem 0;
+    animation: goLeft .8s ease-in;
+
+
+}
+
+.front {
+    color: #fff;
+    background-image: url('../images/bg-card-front.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding: 2.7rem 3.2rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-self: start;
+}
+
+.back {
+    color: var(--grayish-violet);
+    background-image: url('../images/bg-card-back.png');
+    background-size: contain;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    position: relative;
+    align-self: flex-end;
+    animation-delay: .3s;
+    animation-fill-mode: backwards;
+}
+
+.front::before,
+.back::before {
+    content: "";
+    position: absolute;
+    bottom: -1.5rem;
+    left: 0rem;
+    box-shadow: 0rem 4rem 5rem hsla(279, 6%, 55%, 0.3);
+    z-index: -999;
+}
+
+
+.front__info-sub, 
+.back__cvc {
+    font-size: 1.4rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.front__deco {
+    display: flex;
+    align-items: center;
+}
+
+.front__deco-fill {
+    width: 4.7rem;
+    height: 4.7rem;
+    border-radius: 100rem;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fa-brands {
+    font-size: 2.5rem;
+    color: var(--purple);
+}
+
+.fa-brands.hidden {
+    opacity: 0;
+    font-size: 2.5rem;
+    color: var(--purple);
+}
+
+.front__deco-empty {
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 100rem;
+    background-color: transparent;
+    border: 1px solid #fff;;
+    margin-left: 1.6rem;
+}
+
+.front__info-num {
+    font-size: 2.8rem;
+    letter-spacing: 0.12em;
+}
+
+.front__info-sub {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2.5rem;
+}
+
+.front__info-val {
+    letter-spacing: 0;
+}
+
+
+.back__cvc {
+    position: absolute;
+    top: 11.1rem;
+    right: 6rem;  
+}

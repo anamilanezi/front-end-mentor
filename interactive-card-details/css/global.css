@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
+@keyframes goLeft {
+    0% {
+        opacity: 0;
+        transform: translate(100vh, 0);
+    }
+
+    40% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+  }
+
+@keyframes reveal {
+    0% {
+        opacity: 0;
+    }   
+    100% {
+        opacity: 1;
+    }
+}
+
+
+:root {
+    --grayish-violet: hsl(270, 3%, 87%);
+    --gray: hsl(279, 6%, 55%);
+    --violet: hsl(278, 68%, 11%);
+    --red: hsl(0, 100%, 66%);
+    --purple: hsl(249, 99%, 64%);
+    --gradient: linear-gradient(to right, hsl(249, 99%, 64%), hsl(278, 94%, 30%));
+
+}
+
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%; /* 10px = 1rem | 62.5%  of default 16px = 10px but allow user to increase*/
+}
+
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    box-sizing: border-box;
+    font-weight: 500;
+    overflow-x: hidden;
+}
+
+/* Credit Cards Images Column */
+.container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}

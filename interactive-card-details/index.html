@@ -4,20 +4,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!__ displays site properly based on user's device __>
+  <!-- displays site properly based on user's device -->
 
-    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 
-    <!__ Font Awesome __>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-      <link rel="stylesheet" href="css/style.css">
-      <title>Frontend Mentor | Interactive card details form</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/cards.css">
+  <link rel="stylesheet" href="css/form.css">
+  <link rel="stylesheet" href="css/mobile.css">
 
-      <!__ Feel free to remove these styles or customise in your own stylesheet 👍 __>
 
+  <title>Frontend Mentor | Interactive card details form</title>
 </head>
 
 <body>
@@ -25,27 +27,29 @@
   <main class="container">
 
     <section class="container__card">
-      
 
-        <figure class="front">
-          <div class="front__deco">
-            <div class="front__deco-fill">
-              <i class="fa-brands class"></i>
-            </div>
-            <div class="front__deco-empty"></div>
+
+      <figure class="front">
+
+        <div class="front__deco">
+          <div class="front__deco-fill">
+            <i class="fa-brands class"></i>
           </div>
-          <div class="front__info">
-            <span class="front__info-num">0000 0000 0000 0000</span>
-            <div class="front__info-sub">
-              <span class="front__info-name">Jane Appleseed</span>
-              <span class="front__info-val">
-                <span class="front__info-mm">00</span>
-                <span>/</span>
-                <span class="front__info-yy">00</span>
-              </span>
-            </div>
+          <div class="front__deco-empty"></div>
+        </div>
+
+        <div class="front__info">
+          <span class="front__info-num">0000 0000 0000 0000</span>
+          <div class="front__info-sub">
+            <span class="front__info-name">Jane Appleseed</span>
+            <span class="front__info-val">
+              <span class="front__info-mm">00</span>
+              <span>/</span>
+              <span class="front__info-yy">00</span>
+            </span>
           </div>
-        </figure>
+        </div>
+      </figure>
 
 
       <figure class="back">
@@ -59,14 +63,15 @@
       <form class="card__form">
 
         <label class="form__label" for="form__name">Cardholder name
-          <input class="form__name" id="form__name" name="form__name" type="text" maxlength="30" placeholder="e.g. Jane Appleseed"
-            aria-label="" />
+          <input class="form__name" id="form__name" name="form__name" type="text" maxlength="30"
+            placeholder="e.g. Jane Appleseed" aria-label="" />
         </label>
         <span class="form__warning name hidden">Can't be empty</span>
 
         <div class="form__col">
           <label class="form__label" for="form__num">Card number
-            <input id="form__num" class="" name="form__num" type="text" maxlength="19" aria-label="" placeholder="e.g. 1234 5678 9123 0000"/>
+            <input id="form__num" class="" name="form__num" type="text" maxlength="19" aria-label=""
+              placeholder="e.g. 1234 5678 9123 0000" />
           </label>
           <span class="form__warning num hidden">Wrong format, numbers only</span>
         </div>
@@ -74,13 +79,12 @@
         <div class="form__row">
 
           <div class="form__col">
+
             <label class="form__label" for="form__col">Exp date (MM/YY)
-              <input class="form__date" id="form__month" name="form__month" type="number"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-              type = "number"
-              maxlength = "2" placeholder="MM" />
-              <input class="form__date" id="form__year" name="form__year" type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-              type = "number"
-              maxlength = "2" placeholder="YY" /> 
+              <input class="form__date" id="form__month" name="form__month" type="number" type="number" maxlength="2"
+                placeholder="MM" />
+              <input class="form__date" id="form__year" name="form__year" type="number" type="number" maxlength="2"
+                placeholder="YY" />
             </label>
             <span class="form__warning date hidden">Can't be blank</span>
           </div>
@@ -91,8 +95,8 @@
 
 
             <label class="form__label" for="form__cvc">CVC
-              <input class="form__cvc" id="form__cvc" name="form__cvc" type="number" 
-                aria-label="" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="4" placeholder="e.g. 123"/>
+              <input class="form__cvc" id="form__cvc" name="form__cvc" type="number" maxlength="4"
+                placeholder="e.g. 123" />
             </label>
             <span class="form__warning cvc hidden">Can't be blank</span>
           </div>
@@ -104,7 +108,16 @@
       </form>
 
       <section class="card__msg hidden">
-        <svg width="80" height="80" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="40" cy="40" r="40" fill="url(#a)"/><path d="M28 39.92 36.08 48l16-16" stroke="#fff" stroke-width="3"/><defs><linearGradient id="a" x1="-23.014" y1="11.507" x2="0" y2="91.507" gradientUnits="userSpaceOnUse"><stop stop-color="#6348FE"/><stop offset="1" stop-color="#610595"/></linearGradient></defs></svg>
+        <svg width="80" height="80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="40" cy="40" r="40" fill="url(#a)" />
+          <path d="M28 39.92 36.08 48l16-16" stroke="#fff" stroke-width="3" />
+          <defs>
+            <linearGradient id="a" x1="-23.014" y1="11.507" x2="0" y2="91.507" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#6348FE" />
+              <stop offset="1" stop-color="#610595" />
+            </linearGradient>
+          </defs>
+        </svg>
         <h1 class="card__msg-title">Thank you!</h1>
         <p class="card__msg-confirmation">We've added your card details</p>
         <button class="btn continue" type="input"> Continue</button>
@@ -113,36 +126,8 @@
     </section>
   </main>
 
-  <!--
-  0000 0000 0000 0000
-  Jane Appleseed
-  00/00
 
-  000
-
-  Cardholder Name
-  e.g. Jane Appleseed
-
-  Card Number
-  e.g. 1234 5678 9123 0000
-
-  Exp. Date (MM/YY)
-  MM
-  YY
-
-  CVC
-  e.g. 123
-
-  Confirm
-
-__________________
-
-  Thank you!
-  We've added your card details
-  Continue 
-__>
-  
-  <!__ <div class="attribution">
+  <!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>. 
   </div> -->

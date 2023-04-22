@@ -26,7 +26,8 @@ const warningCvc = document.querySelector('.form__warning.cvc')
 
 let validForm;
 
-// Card Name
+
+// CARDHOLDER NAME
 
 formName.addEventListener('input', () => {
     addClass(warningName, 'hidden');
@@ -35,9 +36,12 @@ formName.addEventListener('input', () => {
 })
 
 
-// Card Num
+// CARD NUMBER
 
 formNum.addEventListener('input', () => {
+
+    testLength(formNum)
+
     // Hide warning and reset to default value 
     addClass(warningNum, 'hidden');
     setTimeout(() => {
@@ -84,9 +88,10 @@ formNum.addEventListener('input', () => {
 })
 
 
-// Date
-
+// DATE
+// Month
 formValMonth.addEventListener('input', (e) => {
+    testLength(formValMonth)
 
     if (!invalidYear(formValYear.value)) {
         resetForm(formValMonth, warningDate)
@@ -104,7 +109,11 @@ formValMonth.addEventListener('input', (e) => {
     }
 )
 
+//Year
 formValYear.addEventListener('input', (e) => {
+
+    testLength(formValYear)
+
     if (!invalidMonth(formValMonth.value)) {
         resetForm(formValYear, warningDate)
 
@@ -119,14 +128,13 @@ formValYear.addEventListener('input', (e) => {
             formError(formValYear, warningDate)
         }
     }
-
-
     }
 )
 
 //  CVV
 
 formCvc.addEventListener('input', (e) => {
+    testLength(formCvc)
     resetForm(formCvc, warningCvc)
 
     let text = formCvc.value;
@@ -135,6 +143,7 @@ formCvc.addEventListener('input', (e) => {
 })
 
 
+// BUTTON SUBMIT
 
 btn.addEventListener('click', (e) => {
 
@@ -196,6 +205,8 @@ btn.addEventListener('click', (e) => {
 });
 
 
+// FUNCTIONS DEFINITION
+
 const isEmpty = (formValue) => {
     return formValue == 0 || formValue == ""
 }
@@ -242,3 +253,9 @@ const setBrand = (brandName) => {
     // Change to brand 
     brandClassList.add(`fa-cc-${brandName}`)
 }
+
+
+
+const testLength = (formInput) => {
+    if (formInput.value.length > formInput.maxLength) formInput.value = formInput.value.slice(0, formInput.maxLength);
+} 
