@@ -96,6 +96,26 @@ input:focus {
     opacity: 0;
 }
 
+.card__msg-title {
+    font-size: 3rem;
+    letter-spacing: 1rem;
+    text-transform: uppercase;
+    order: 2;
+}
+
+.card__msg-confirmation {
+    font-size: 1.8rem;
+    color: var(--gray);
+    order: 3;
+}
+
+.card__msg-icon {
+    order: 1;
+}
+
+.btn.continue {
+    order: 4;
+}
 
 .form__row {
     display: flex;
@@ -148,13 +168,3 @@ input.error {
     border: 0.2rem solid var(--red);
 }
 
-.card__msg-title {
-    font-size: 3rem;
-    letter-spacing: 1rem;
-    text-transform: uppercase;
-}
-
-.card__msg-confirmation {
-    font-size: 1.8rem;
-    color: var(--gray);
-}
